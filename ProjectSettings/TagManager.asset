@@ -3,15 +3,18 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - CollideZoneTop
+  - CollideZoneBottom
+  - Enemy
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Movement
   - Water
   - UI
-  - 
+  - Player
   - 
   - 
   - 
