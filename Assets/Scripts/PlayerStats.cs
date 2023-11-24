@@ -5,12 +5,7 @@ using UnityEngine;
 public class PlayerStats : MonoBehaviour
 {
     private int health = 1;
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
     void Update()
     {
         CheckHealth();
@@ -21,12 +16,12 @@ public class PlayerStats : MonoBehaviour
         return health;
     }
 
-    public void takeDamage(int damage)
+    public void takeDamage(int damage) // rudimentary damage system. Allows for other scripts to damage player.
     {
         health -= damage;
     }
 
-    private void CheckHealth()
+    private void CheckHealth() // Checks to see if health is at or below zero and if so, destroying the player.
     {
         if (health <= 0)
         {

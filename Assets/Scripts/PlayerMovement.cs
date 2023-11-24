@@ -9,12 +9,8 @@ public class PlayerMovement : MonoBehaviour
     private bool hasCollidedTop = false;
     private bool hasCollidedBottom = false;
     [SerializeField] float moveSpeed = 6f;
-    void Start()
-    {
-       rb = GetComponent<Rigidbody2D>(); // grabs the rigidbody2D component
-    }
-
    
+
     void Update()
     {
         Movement();
