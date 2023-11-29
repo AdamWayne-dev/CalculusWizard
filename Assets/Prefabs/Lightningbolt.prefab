@@ -12,8 +12,9 @@ GameObject:
   - component: {fileID: 4392593771139425990}
   - component: {fileID: -316741978630843842}
   - component: {fileID: 877085051118169612}
+  - component: {fileID: 1526224182038068293}
   m_Layer: 0
-  m_Name: Fireball_frame_1
+  m_Name: Lightningbolt
   m_TagString: FireSpell
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -75,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: d95badcf189987a48a54b2b0c4f11a54, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1e135616cfa95b740a5b294b2214327b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -148,3 +149,24 @@ CircleCollider2D:
   m_Offset: {x: 0.60467285, y: -0.029999971}
   serializedVersion: 2
   m_Radius: 0.49851722
+--- !u!95 &1526224182038068293
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 986366645337047107}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 610727cba12635e48a73ecc5d58df377, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

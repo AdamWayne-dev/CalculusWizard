@@ -5,13 +5,15 @@ using UnityEngine;
 public class FireSpells : MonoBehaviour
 {
     [SerializeField] GameObject fireSpellPrefab;
-
+    [SerializeField] CycleSpells cycleSpells;
     [SerializeField] float fireSpeed = 7f;
+
     GameObject spell;
     private bool spellExists = false;
 
     void Update()
     {
+        SetCurrentSpell();
         FireSpell();
     }
 
@@ -33,5 +35,10 @@ public class FireSpells : MonoBehaviour
     public void SetSpellExists(bool setState) // allows for other scripts to set the state of the spell (after collisions).
     {
         spellExists = setState;
+    }
+
+    public void SetCurrentSpell() // Sets te current spell from the cyclespells script.
+    {
+        fireSpellPrefab = cycleSpells.GetCurrentSpell();
     }
 }
