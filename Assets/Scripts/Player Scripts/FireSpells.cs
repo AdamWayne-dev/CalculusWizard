@@ -1,18 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEngine.RuleTile.TilingRuleOutput;
 
 public class FireSpells : MonoBehaviour
 {
+    
     [SerializeField] GameObject fireSpellPrefab;
     [SerializeField] CycleSpells cycleSpells;
     [SerializeField] float fireSpeed = 7f;
 
     GameObject spell;
+    
     private bool spellExists = false;
 
     void Update()
     {
+        
         SetCurrentSpell();
         FireSpell();
     }
@@ -37,8 +41,18 @@ public class FireSpells : MonoBehaviour
         spellExists = setState;
     }
 
-    public void SetCurrentSpell() // Sets te current spell from the cyclespells script.
+    public bool GetSpellExists() 
+    { 
+        return spellExists; 
+    }
+    public void SetCurrentSpell() // Sets the current spell from the cyclespells script.
     {
         fireSpellPrefab = cycleSpells.GetCurrentSpell();
     }
+
+    
+      
 }
+    
+
+ 

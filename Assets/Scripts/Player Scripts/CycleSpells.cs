@@ -4,17 +4,22 @@ using UnityEngine;
 
 public class CycleSpells : MonoBehaviour
 {
+    FireSpells fireSpells;
     [SerializeField] GameObject[] spellPrefabs;
     private GameObject currentSpell;
     private int spellIndex = 0;
+    private bool doesSpellExist;
 
     private void Start()
     {
+        fireSpells = FindObjectOfType<FireSpells>();
         currentSpell = spellPrefabs[0];
     }
 
     private void Update()
     {
+
+        doesSpellExist = fireSpells.GetSpellExists();
         SpellCycle();
         SetSpell();
     }
@@ -26,7 +31,7 @@ public class CycleSpells : MonoBehaviour
     public void SpellCycle() // cycle through the array of spells using 'E' to go forwards and 'Q' to go backwards.
     {   
         
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.E) && !doesSpellExist)
         {      
             spellIndex++;
             if (spellIndex == spellPrefabs.Length)
@@ -36,7 +41,7 @@ public class CycleSpells : MonoBehaviour
                      
         }
 
-        if (Input.GetKeyDown(KeyCode.Q))
+        if (Input.GetKeyDown(KeyCode.Q) && !doesSpellExist)
         {
             spellIndex--;
             if (spellIndex < 0)

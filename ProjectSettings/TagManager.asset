@@ -6,8 +6,11 @@ TagManager:
   tags:
   - CollideZoneTop
   - CollideZoneBottom
-  - Enemy
   - FireSpell
+  - RedEnemy
+  - BlueEnemy
+  - YellowEnemy
+  - GreenEnemy
   layers:
   - Default
   - TransparentFX

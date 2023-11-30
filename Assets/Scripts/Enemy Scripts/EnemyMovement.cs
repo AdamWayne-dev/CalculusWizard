@@ -6,14 +6,16 @@ public class EnemyMovement : MonoBehaviour
 {
     private FireSpells fireSpell;
     private PlayerStats playerstats;
-    private Rigidbody2D enemyRb;
+
+     
+    
 
     [SerializeField] float moveSpeed = 3f;
     void Start()
     {
         fireSpell = FindObjectOfType<FireSpells>();
         playerstats = FindObjectOfType<PlayerStats>();
-        enemyRb = GetComponent<Rigidbody2D>();
+        
     }
 
     // Update is called once per frame
@@ -28,12 +30,8 @@ public class EnemyMovement : MonoBehaviour
         {
             playerstats.takeDamage(1);
             gameObject.SetActive(false);
-        }
-
-        if (collision.tag == "FireSpell")
-        {
-            fireSpell.SetSpellExists(false);
-            Destroy(collision.gameObject);
-        }
+        }  
     }
+
+  
 }
