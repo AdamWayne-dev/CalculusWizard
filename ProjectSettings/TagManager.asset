@@ -11,6 +11,7 @@ TagManager:
   - BlueEnemy
   - YellowEnemy
   - GreenEnemy
+  - Boss_Level_1
   layers:
   - Default
   - TransparentFX

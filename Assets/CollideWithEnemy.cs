@@ -14,10 +14,12 @@ public class CollideWithEnemy : MonoBehaviour
     [SerializeField] GameObject spellBoof;
 
     private bool[] spellsCollected;
+
+ 
    
     
     private void Start()
-    {   
+    {
         spellsCollected = new bool[4];
         populate = FindObjectOfType<PopulatePages>();
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -27,13 +29,16 @@ public class CollideWithEnemy : MonoBehaviour
     }
     void Update()
     {
+        PopulateSpells();
+    }
+
+    private void PopulateSpells()
+    {
         spellsCollected[0] = populate.GetSpellsCollected(0);
         spellsCollected[1] = populate.GetSpellsCollected(1);
         spellsCollected[2] = populate.GetSpellsCollected(2);
         spellsCollected[3] = populate.GetSpellsCollected(3);
-
         spellIndex = cycleSpells.GetSpellIndex();
-        
     }
 
     private void OnTriggerEnter2D(Collider2D collision) /* Checks to see what "type" an enemy is and depending on which spell is selected, will either
@@ -56,6 +61,8 @@ public class CollideWithEnemy : MonoBehaviour
                     StartCoroutine(SpellBoofDelay());                 
                 }
 
+                // ADD BOSS HIT CHECK
+                else
                 {
                     // Add stun to player?
                     fireSpells.SetSpellExists(false);
@@ -129,7 +136,7 @@ public class CollideWithEnemy : MonoBehaviour
                     spriteRenderer.enabled = false;
                     StartCoroutine(SpellBoofDelay());
                 }
-                break;
+                break; 
         }
     }
     IEnumerator SpellBoofDelay()
