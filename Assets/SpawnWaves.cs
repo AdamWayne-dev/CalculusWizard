@@ -112,6 +112,7 @@ public class SpawnWaves : MonoBehaviour
 
         if (bossHealth == 0)
         {
+            bossSpawn = false;
             Destroy(boss);
         }
 

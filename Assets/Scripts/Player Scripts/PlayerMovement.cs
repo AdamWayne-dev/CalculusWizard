@@ -9,8 +9,14 @@ public class PlayerMovement : MonoBehaviour
     private bool hasCollidedTop = false;
     private bool hasCollidedBottom = false;
     [SerializeField] float moveSpeed = 6f;
-   
 
+    PlayerStats playerStats;
+
+
+    private void Start()
+    {
+        playerStats = GetComponent<PlayerStats>();
+    }
     void Update()
     {
         Movement();
@@ -44,6 +50,11 @@ public class PlayerMovement : MonoBehaviour
         {
             hasCollidedBottom = true;
            
+        }
+
+        if (collision.tag == "BossSpell")
+        {
+            playerStats.takeDamage(1);    
         }
     }
 
