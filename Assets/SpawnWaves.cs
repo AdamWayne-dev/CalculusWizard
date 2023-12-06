@@ -14,6 +14,16 @@ public class SpawnWaves : MonoBehaviour
     [SerializeField] Transform bossUpperBoundary;
     [SerializeField] Transform bossLowerBoundary;
     [SerializeField] Sprite[] bossShieldSprites;
+
+    [SerializeField] Sprite[] bossSpellsBeingCast;
+    [SerializeField] SpriteRenderer bossSpellRenderer;
+    private Sprite currentSpell;
+    private bool isCastingSpell_1;
+    private bool isCastingSpell_2;
+    private bool isCastingSpell_3;
+    private bool isCastingSpell_4;
+    private bool isCurrentlyCasting;
+
     [SerializeField] ShieldFollowBoss shieldFollowBoss;
     private bool hasReachedUpper;
     private bool hasReachedLower;
@@ -121,6 +131,7 @@ public class SpawnWaves : MonoBehaviour
         }
         else if (atFirstBossPosition)
         {
+            SetBossSpellCast();
             bossLocation = boss.transform;
             if (!hasReachedUpper)
             {
@@ -148,7 +159,8 @@ public class SpawnWaves : MonoBehaviour
     public void DamageBoss()
     {
         bossHealth--;
-        Debug.Log(bossHealth);
+        isCurrentlyCasting = false;
+        SetBossSpellCast();
     }
 
     public int GetBossHealth() 
@@ -161,8 +173,85 @@ public class SpawnWaves : MonoBehaviour
         return bossSpawn;
     }
 
+    public bool IsAtFirstPosition()
+    {
+        return atFirstBossPosition;
+    }
     public Transform GetBossPosition()
     {
         return bossLocation;
+    }
+
+    private void SetBossSpellCast() // Randomly selects a spell for the boss to cast and sets the current sprite to reflect that.
+    {
+        int randomNumber = Random.Range(0, 4);
+        if(randomNumber == 0 && !isCurrentlyCasting)
+        {
+            currentSpell = bossSpellsBeingCast[0];
+            bossSpellRenderer.sprite = currentSpell;
+            isCastingSpell_1 = true;
+            isCastingSpell_2 = false;
+            isCastingSpell_3 = false;
+            isCastingSpell_4 = false;
+            isCurrentlyCasting = true;
+        }
+
+        else if (randomNumber == 1 && !isCurrentlyCasting) 
+        {
+            currentSpell = bossSpellsBeingCast[1];
+            bossSpellRenderer.sprite = currentSpell;
+            isCastingSpell_1 = false;
+            isCastingSpell_2 = true;
+            isCastingSpell_3 = false;
+            isCastingSpell_4 = false;
+            isCurrentlyCasting = true;
+        }
+        
+        else if (randomNumber == 2 && !isCurrentlyCasting)
+        {
+            currentSpell = bossSpellsBeingCast[2];
+            bossSpellRenderer.sprite = currentSpell;
+            isCastingSpell_1 = false;
+            isCastingSpell_2 = false;
+            isCastingSpell_3 = true;
+            isCastingSpell_4 = false;
+            isCurrentlyCasting = true;
+        }
+
+        else if (randomNumber == 3 && !isCurrentlyCasting)
+        {
+            currentSpell = bossSpellsBeingCast[3];
+            bossSpellRenderer.sprite = currentSpell;
+            isCastingSpell_1 = false;
+            isCastingSpell_2 = false;
+            isCastingSpell_3 = false;
+            isCastingSpell_4 = true;
+            isCurrentlyCasting = true;
+        }
+    }
+
+    public bool GetIsCurrentlyCasting() // May not need this
+    {
+        return isCurrentlyCasting;
+    }
+
+    public bool IsCastingSpell_1()
+    {
+        return isCastingSpell_1;
+    }
+
+    public bool IsCastingSpell_2()
+    {
+        return isCastingSpell_2;
+    }
+
+    public bool IsCastingSpell_3()
+    {
+        return isCastingSpell_3;
+    }
+
+    public bool IsCastingSpell_4()
+    {
+        return isCastingSpell_4;
     }
 }

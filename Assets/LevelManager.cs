@@ -14,7 +14,6 @@ public class LevelManager : MonoBehaviour
     {
         timerFinished = false;
         spawnWaves = FindObjectOfType<SpawnWaves>();
-        //timer = 5f;
     }
 
 
