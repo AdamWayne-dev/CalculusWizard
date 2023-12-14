@@ -7,8 +7,11 @@ public class LevelManager : MonoBehaviour
 {
     SpawnWaves spawnWaves;
     [SerializeField] TMP_Text timerText;
+    [SerializeField] TMP_Text scoreText;
 
     [SerializeField] float timer;
+    private int score;
+
     private bool timerFinished;
     void Start()
     {
@@ -21,9 +24,9 @@ public class LevelManager : MonoBehaviour
     {
         EndTimer();
         HideTimer();
-        timer = timer - 1 * Time.deltaTime;
-        timerText.text = timer.ToString("0.00");
-      
+        CreateTimer();
+        UpdateTimerText();
+        UpdateScoreText();
     }
 
     private void EndTimer()
@@ -50,5 +53,31 @@ public class LevelManager : MonoBehaviour
         {
             timerText.enabled = false;
         }
+    }
+
+    public void SetScore(int scoreAmount)
+    {
+        score += scoreAmount;
+        if (score < 0)
+        {
+            score = 0;
+        }
+    }
+
+    public void ResetScore()
+    {
+        score = 0;
+    }
+    private void CreateTimer()
+    {
+        timer -= (1 * Time.deltaTime);
+    }
+    private void UpdateTimerText()
+    {
+        timerText.text = timer.ToString("0.00");
+    }
+    private void UpdateScoreText()
+    {
+        scoreText.text = score.ToString();
     }
 }

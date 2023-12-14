@@ -6,12 +6,14 @@ public class CollideWithEnemy : MonoBehaviour
 {
 
     private int spellIndex;
+    LevelManager levelManager;
     CycleSpells cycleSpells;
     PopulatePages populate;
     FireSpells fireSpells;
     SpriteRenderer spriteRenderer;
     SpawnWaves spawnWaves;
     [SerializeField] GameObject spellBoof;
+
 
     private bool[] spellsCollected;
 
@@ -23,8 +25,9 @@ public class CollideWithEnemy : MonoBehaviour
    
     
     private void Start()
-    {
+    {         
         spellsCollected = new bool[4];
+        levelManager = FindObjectOfType<LevelManager>();
         populate = FindObjectOfType<PopulatePages>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         cycleSpells = FindObjectOfType<CycleSpells>();
@@ -61,6 +64,7 @@ public class CollideWithEnemy : MonoBehaviour
                     }
                     fireSpells.SetSpellExists(false);
                     spawnWaves.SetHasSpawned(false);
+                    levelManager.SetScore(15);
                     Destroy(collision.gameObject);
                     spriteRenderer.enabled = false;
                     StartCoroutine(SpellBoofDelay());                 
@@ -73,7 +77,8 @@ public class CollideWithEnemy : MonoBehaviour
 
                 else
                 {
-                    // Add stun to player?
+                    
+                    levelManager.SetScore(-5);
                     fireSpells.SetSpellExists(false);
                     spriteRenderer.enabled = false;
                     StartCoroutine(SpellBoofDelay());
@@ -90,6 +95,7 @@ public class CollideWithEnemy : MonoBehaviour
                     }
                     fireSpells.SetSpellExists(false);
                     spawnWaves.SetHasSpawned(false);
+                    levelManager.SetScore(15);
                     Destroy(collision.gameObject);
                     spriteRenderer.enabled = false;
                     StartCoroutine(SpellBoofDelay());                   
@@ -102,7 +108,8 @@ public class CollideWithEnemy : MonoBehaviour
 
                 else
                 {
-                    // Add stun to player?
+                    
+                    levelManager.SetScore(-5);
                     fireSpells.SetSpellExists(false);
                     spriteRenderer.enabled = false;
                     StartCoroutine(SpellBoofDelay());
@@ -118,6 +125,7 @@ public class CollideWithEnemy : MonoBehaviour
                     }
                     fireSpells.SetSpellExists(false);
                     spawnWaves.SetHasSpawned(false);
+                    levelManager.SetScore(15);
                     Destroy(collision.gameObject);
                     spriteRenderer.enabled = false;
                     StartCoroutine(SpellBoofDelay());                   
@@ -130,7 +138,8 @@ public class CollideWithEnemy : MonoBehaviour
 
                 else
                 {
-                    // Add stun to player?
+                    
+                    levelManager.SetScore(-5);
                     fireSpells.SetSpellExists(false);
                     spriteRenderer.enabled = false;
                     StartCoroutine(SpellBoofDelay());
@@ -146,6 +155,7 @@ public class CollideWithEnemy : MonoBehaviour
                     }
                     fireSpells.SetSpellExists(false);
                     spawnWaves.SetHasSpawned(false);
+                    levelManager.SetScore(15);
                     Destroy(collision.gameObject);
                     spriteRenderer.enabled = false;
                     StartCoroutine(SpellBoofDelay());
@@ -158,7 +168,8 @@ public class CollideWithEnemy : MonoBehaviour
 
                 else
                 {
-                    // Add stun to player?
+                    
+                    levelManager.SetScore(-5);
                     fireSpells.SetSpellExists(false);
                     spriteRenderer.enabled = false;
                     StartCoroutine(SpellBoofDelay());
@@ -173,6 +184,7 @@ public class CollideWithEnemy : MonoBehaviour
         {
             spawnWaves.DamageBoss();
             fireSpells.SetSpellExists(false);
+            levelManager.SetScore(20);
             spriteRenderer.enabled = false;
             StartCoroutine(SpellBoofDelay());
         }
@@ -180,6 +192,7 @@ public class CollideWithEnemy : MonoBehaviour
         else
         {
             // Add stun to player?
+            levelManager.SetScore(-5);
             fireSpells.SetSpellExists(false);
             spriteRenderer.enabled = false;
             StartCoroutine(SpellBoofDelay());
@@ -191,6 +204,7 @@ public class CollideWithEnemy : MonoBehaviour
         {
             spawnWaves.DamageBoss();
             fireSpells.SetSpellExists(false);
+            levelManager.SetScore(15);
             spriteRenderer.enabled = false;
             StartCoroutine(SpellBoofDelay());
         }
@@ -198,6 +212,7 @@ public class CollideWithEnemy : MonoBehaviour
         else
         {
             // Add stun to player?
+            levelManager.SetScore(-5);
             fireSpells.SetSpellExists(false);
             spriteRenderer.enabled = false;
             StartCoroutine(SpellBoofDelay());
@@ -209,6 +224,7 @@ public class CollideWithEnemy : MonoBehaviour
         {
             spawnWaves.DamageBoss();
             fireSpells.SetSpellExists(false);
+            levelManager.SetScore(15);
             spriteRenderer.enabled = false;
             StartCoroutine(SpellBoofDelay());
         }
@@ -216,6 +232,7 @@ public class CollideWithEnemy : MonoBehaviour
         else
         {
             // Add stun to player?
+            levelManager.SetScore(-5);
             fireSpells.SetSpellExists(false);
             spriteRenderer.enabled = false;
             StartCoroutine(SpellBoofDelay());
@@ -228,6 +245,7 @@ public class CollideWithEnemy : MonoBehaviour
         {
             spawnWaves.DamageBoss();
             fireSpells.SetSpellExists(false);
+            levelManager.SetScore(15);
             spriteRenderer.enabled = false;
             StartCoroutine(SpellBoofDelay());
         }
@@ -235,6 +253,7 @@ public class CollideWithEnemy : MonoBehaviour
         else
         {
             // Add stun to player?
+            levelManager.SetScore(-5);
             fireSpells.SetSpellExists(false);
             spriteRenderer.enabled = false;
             StartCoroutine(SpellBoofDelay());
@@ -257,4 +276,6 @@ public class CollideWithEnemy : MonoBehaviour
         bossIsCastingSpell_2 = spawnWaves.IsCastingSpell_3();
         bossIsCastingSpell_3 = spawnWaves.IsCastingSpell_4();
     }
+
+    
 }

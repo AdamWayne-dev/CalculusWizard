@@ -76,7 +76,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 5
   m_Sprite: {fileID: 21300000, guid: 1e135616cfa95b740a5b294b2214327b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -184,4 +184,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spellBoof: {fileID: 5607385607006715590, guid: 76d26bc8e4c2a8b4b9b2733328b64d11, type: 3}
-  pageCollected: 

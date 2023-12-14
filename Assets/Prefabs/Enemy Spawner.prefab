@@ -118,7 +118,7 @@ Transform:
   m_GameObject: {fileID: 5730903224618901334}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -6.55, y: 2.96, z: 0}
+  m_LocalPosition: {x: -6.55, y: 1.96, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -186,8 +186,18 @@ MonoBehaviour:
   bossMoveTo: {fileID: 2783895987432178500}
   bossUpperBoundary: {fileID: 7890955502924825303}
   bossLowerBoundary: {fileID: 3529559029125151620}
-  bossShieldSpriteRenderer: {fileID: 0}
-  bossShieldSprites: []
+  bossShieldSprites:
+  - {fileID: 21300000, guid: 6b1c0606d05718046af98c859f3e23ce, type: 3}
+  - {fileID: 21300000, guid: 5dab95dce87134b43a395da633813923, type: 3}
+  - {fileID: 21300000, guid: 62252c4db23e73448b2c46611e2172c4, type: 3}
+  - {fileID: 21300000, guid: e837cfc28e7eb2d4094815bb5aac2724, type: 3}
+  bossSpellsBeingCast:
+  - {fileID: 21300000, guid: abc9312c4e4140e428cd628b7f80a31c, type: 3}
+  - {fileID: 21300000, guid: 3b00018b7aaedfc4faa2d22c9914f6d1, type: 3}
+  - {fileID: 21300000, guid: a3c90a529cde426439fcb37892da0988, type: 3}
+  - {fileID: 21300000, guid: 81d2f56a302b4fa4798acef97dc77a22, type: 3}
+  bossSpellRenderer: {fileID: 0}
+  shieldFollowBoss: {fileID: 0}
   levelManager: {fileID: 0}
   bossSpeed: 2
 --- !u!1 &6683476230202291831
