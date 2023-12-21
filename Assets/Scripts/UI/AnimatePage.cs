@@ -6,6 +6,7 @@ public class AnimatePage : MonoBehaviour
 {
     FireSpells fireSpells;
     [SerializeField] Animator animator;
+    [SerializeField] AudioSource audioSource;
 
     private bool spellExists;
 
@@ -24,12 +25,15 @@ public class AnimatePage : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E) && !spellExists)
         {
             animator.Play("PageTurnAnimation");
-            
+            audioSource.pitch = Random.Range(0.65f, 0.8f);
+            audioSource.Play();
         }
 
         if (Input.GetKeyDown(KeyCode.Q) && !spellExists)
         {
             animator.Play("PageTurnAnimation");
+            audioSource.pitch = Random.Range(0.65f, 0.8f);
+            audioSource.Play();
         }
         
     }

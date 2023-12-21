@@ -6,7 +6,7 @@ public class EnemyMovement : MonoBehaviour
 {
     private FireSpells fireSpell;
     private PlayerStats playerstats;
-
+    private SpawnWaves spawnWaves;
      
     
 
@@ -15,7 +15,7 @@ public class EnemyMovement : MonoBehaviour
     {
         fireSpell = FindObjectOfType<FireSpells>();
         playerstats = FindObjectOfType<PlayerStats>();
-        
+        spawnWaves = FindObjectOfType<SpawnWaves>();
     }
 
     // Update is called once per frame
@@ -29,6 +29,7 @@ public class EnemyMovement : MonoBehaviour
         if (collision.tag == "Player")
         {
             playerstats.takeDamage(1);
+            spawnWaves.SetHasSpawned(false);
             gameObject.SetActive(false);
         }  
     }

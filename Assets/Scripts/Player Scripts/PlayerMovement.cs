@@ -10,6 +10,10 @@ public class PlayerMovement : MonoBehaviour
     private bool hasCollidedBottom = false;
     [SerializeField] float moveSpeed = 6f;
 
+    [SerializeField] AnimationClip moveUpAnimation;
+    [SerializeField] AnimationClip moveDownAnimation;
+    [SerializeField] Animator animator;
+
     PlayerStats playerStats;
 
 
@@ -26,11 +30,13 @@ public class PlayerMovement : MonoBehaviour
     {
         if ((Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow)) && !hasCollidedTop)
         {
+            animator.Play(moveUpAnimation.name);
             transform.position += transform.up * (moveSpeed * Time.deltaTime);
         }
 
         else if ((Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow)) && !hasCollidedBottom)
         {
+            animator.Play(moveDownAnimation.name);
             transform.position += transform.up * (-moveSpeed * Time.deltaTime);
         }
     }
@@ -56,6 +62,8 @@ public class PlayerMovement : MonoBehaviour
         {
             playerStats.takeDamage(1);    
         }
+
+        
     }
 
     private void OnTriggerExit2D(Collider2D collision) // Resets the boolean of each collision check to enable movement again. 

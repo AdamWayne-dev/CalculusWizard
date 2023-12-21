@@ -5,7 +5,7 @@ using static UnityEngine.RuleTile.TilingRuleOutput;
 
 public class FireSpells : MonoBehaviour
 {
-    
+    [SerializeField] AudioSource audioSource;
     [SerializeField] GameObject fireSpellPrefab;
     [SerializeField] CycleSpells cycleSpells;
     [SerializeField] float fireSpeed = 7f;
@@ -26,8 +26,10 @@ public class FireSpells : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && !spellExists)
         {
             spellExists = true;
+            audioSource.pitch = Random.Range(0.7f, 1f);
+            audioSource.Play();
             spell = Instantiate(fireSpellPrefab, transform.position, Quaternion.identity);
-            // Disable player movement while spells on cooldown?
+            
         }
         if (spellExists)
         {
