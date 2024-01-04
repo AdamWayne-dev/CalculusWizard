@@ -31,7 +31,7 @@ public class CycleSpells : MonoBehaviour
     public void SpellCycle() // cycle through the array of spells using 'E' to go forwards and 'Q' to go backwards.
     {   
         
-        if (Input.GetKeyDown(KeyCode.E) && !doesSpellExist)
+        if ((Input.GetKeyDown(KeyCode.E)|| Input.GetAxisRaw("Mouse ScrollWheel") > 0f) && !doesSpellExist)
         {      
             spellIndex++;
             if (spellIndex == spellPrefabs.Length)
@@ -41,7 +41,7 @@ public class CycleSpells : MonoBehaviour
                      
         }
 
-        if (Input.GetKeyDown(KeyCode.Q) && !doesSpellExist)
+        if ((Input.GetKeyDown(KeyCode.Q) || Input.GetAxisRaw("Mouse ScrollWheel") < 0f) && !doesSpellExist)
         {
             spellIndex--;
             if (spellIndex < 0)

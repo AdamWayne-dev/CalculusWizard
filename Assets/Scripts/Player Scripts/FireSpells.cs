@@ -23,7 +23,7 @@ public class FireSpells : MonoBehaviour
 
     private void FireSpell() // Basic system for firing a spell. Creates a delay by only allowing for one spell per time, disabling the spamming of spells.
     {
-        if (Input.GetKeyDown(KeyCode.Space) && !spellExists)
+        if ((Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Mouse0)) && !spellExists)
         {
             spellExists = true;
             audioSource.pitch = Random.Range(0.7f, 1f);

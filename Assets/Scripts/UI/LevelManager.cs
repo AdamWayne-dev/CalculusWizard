@@ -3,39 +3,47 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
+using Unity.VisualScripting;
 
 public class LevelManager : MonoBehaviour
 {
     [SerializeField] Canvas levelEndCanvas;
-   
-    
+    [SerializeField] Canvas gameOverCanvas;
+
 
     SpawnWaves spawnWaves;
+    PlayerStats playerStats;
     [SerializeField] TMP_Text timerText;
     [SerializeField] TMP_Text scoreText;
+    [SerializeField] TMP_Text gameOverTotalScore;
     [SerializeField] TMP_Text TotalScoreText;
 
     [SerializeField] float timer;
-    private int score;
+    static private int score;
 
     private bool timerFinished;
     private bool levelComplete;
+    private bool gameOver;
     private void Awake()
     {
         levelEndCanvas.enabled = false;
+        gameOverCanvas.enabled = false;
     }
     void Start()
     {
-        
+        gameOver = false;
         levelComplete = false;
         timerFinished = false;
+        playerStats = FindObjectOfType<PlayerStats>();
         spawnWaves = FindObjectOfType<SpawnWaves>();
     }
 
 
     void Update()
     {
-        CheckLevelComplete();      
+        GetGameOver();
+        CheckGameOver();
+        CheckLevelComplete();
         EndTimer();
         HideTimer();
         CreateTimer();
@@ -78,6 +86,10 @@ public class LevelManager : MonoBehaviour
         }
     }
 
+    public int GetScore()
+    {
+        return score;
+    }
     public void ResetScore()
     {
         score = 0;
@@ -94,6 +106,7 @@ public class LevelManager : MonoBehaviour
     {
         scoreText.text = score.ToString();
         TotalScoreText.text = score.ToString();
+        gameOverTotalScore.text = score.ToString();
     }
 
     public void SetLevelComplete(bool state)
@@ -106,6 +119,10 @@ public class LevelManager : MonoBehaviour
         return levelComplete;
     }
 
+    public bool GetGameOver()
+    {
+        return gameOver = playerStats.GetPlayerDead();
+    }
     private void CheckLevelComplete()
     {
         if (levelComplete)
@@ -118,6 +135,21 @@ public class LevelManager : MonoBehaviour
         {
             levelEndCanvas.enabled = false;
             Time.timeScale = 1f;   
+        }
+    }
+
+    private void CheckGameOver()
+    {
+        if (gameOver)
+        {
+            gameOverCanvas.enabled = true;
+            Time.timeScale = 0f;
+        }
+
+        else
+        {
+            gameOverCanvas.enabled = false;
+            Time.timeScale = 1f;
         }
     }
 

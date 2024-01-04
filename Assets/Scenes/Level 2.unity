@@ -1604,10 +1604,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Game Manager
       objectReference: {fileID: 0}
-    - target: {fileID: 1117682526999426126, guid: ba26f0df5073dab4996f4a97f9595ac7, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 808831557}
+    - target: {fileID: 2172023233050341976, guid: ba26f0df5073dab4996f4a97f9595ac7, type: 3}
+      propertyPath: m_Name
+      value: Restart Level Button
+      objectReference: {fileID: 0}
     - target: {fileID: 3407534431947155867, guid: ba26f0df5073dab4996f4a97f9595ac7, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1649,6 +1649,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3649078311136231104, guid: ba26f0df5073dab4996f4a97f9595ac7, type: 3}
+      propertyPath: timer
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 3649078311136231104, guid: ba26f0df5073dab4996f4a97f9595ac7, type: 3}
       propertyPath: scoreText
       value: 
       objectReference: {fileID: 483946255}
@@ -1660,18 +1664,46 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 808831557}
+    - target: {fileID: 5143141185068188809, guid: ba26f0df5073dab4996f4a97f9595ac7, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: RestartLevel
+      objectReference: {fileID: 0}
+    - target: {fileID: 5143141185068188809, guid: ba26f0df5073dab4996f4a97f9595ac7, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: LevelLoader, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5413986625173886221, guid: ba26f0df5073dab4996f4a97f9595ac7, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5413986625173886221, guid: ba26f0df5073dab4996f4a97f9595ac7, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5413986625173886221, guid: ba26f0df5073dab4996f4a97f9595ac7, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 808831557}
-    - target: {fileID: 5978008583194391178, guid: ba26f0df5073dab4996f4a97f9595ac7, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 808831557}
-    - target: {fileID: 7946423773644680968, guid: ba26f0df5073dab4996f4a97f9595ac7, type: 3}
-      propertyPath: m_Camera
-      value: 
-      objectReference: {fileID: 519420031}
+    - target: {fileID: 5413986625173886221, guid: ba26f0df5073dab4996f4a97f9595ac7, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5413986625173886221, guid: ba26f0df5073dab4996f4a97f9595ac7, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: GoToMainMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 5413986625173886221, guid: ba26f0df5073dab4996f4a97f9595ac7, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: LevelLoader, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5413986625173886221, guid: ba26f0df5073dab4996f4a97f9595ac7, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 6232094398977403873, guid: ba26f0df5073dab4996f4a97f9595ac7, type: 3}
+      propertyPath: m_Name
+      value: Main Menu Button
+      objectReference: {fileID: 0}
     - target: {fileID: 9142882919227952561, guid: ba26f0df5073dab4996f4a97f9595ac7, type: 3}
       propertyPath: m_Camera
       value: 

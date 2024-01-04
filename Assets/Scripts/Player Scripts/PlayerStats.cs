@@ -10,9 +10,11 @@ public class PlayerStats : MonoBehaviour
     Color collideColour;
     Color normalColour;
     private int health = 3;
+    private bool playerDead;
 
     private void Start()
     {
+        playerDead = false;
         collideColour = new Color(191, 70, 192 );
         normalColour = playerSpriteRenderer.material.color;
     }
@@ -51,10 +53,15 @@ public class PlayerStats : MonoBehaviour
 
         else if (health <= 0)
         {
+            playerDead = true;
             gameObject.SetActive(false);
         }
     }
 
+    public bool GetPlayerDead()
+    {
+        return playerDead;
+    }
     IEnumerator Flasher()
     {
         playerSpriteRenderer.material.color = collideColour;
