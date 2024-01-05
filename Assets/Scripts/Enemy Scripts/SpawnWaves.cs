@@ -1,11 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SpawnWaves : MonoBehaviour
 {
     [SerializeField] GameObject[] spawnLocations;
-    [SerializeField] GameObject[] enemies;
+    [SerializeField] GameObject[] level_1_Enemies;
+    [SerializeField] GameObject[] level_2_Enemies;
+    [SerializeField] GameObject[] level_3_Enemies;
 
     [SerializeField] GameObject boss_Lvl_1_Prefab;
     private GameObject boss;
@@ -57,13 +60,24 @@ public class SpawnWaves : MonoBehaviour
 
     private void SpawnEnemies()
     {
-        // Add spawn counter before boss fight?
+       
         if (!hasSpawned && !bossSpawn)
         {
-            hasSpawned = true;
-            GameObject enemy = ChooseRandomEnemy();
-            Transform enemyLocation = ChooseRandomSpawnLocation();
-            GameObject spawnedEnemy = Instantiate(enemy, enemyLocation);
+            if (SceneManager.GetActiveScene().buildIndex == 1)
+            {
+                hasSpawned = true;
+                GameObject enemy = Level_1_ChooseRandomEnemy();
+                Transform enemyLocation = ChooseRandomSpawnLocation();
+                GameObject spawnedEnemy = Instantiate(enemy, enemyLocation);
+            }
+
+            if (SceneManager.GetActiveScene().buildIndex == 2)
+            {
+                hasSpawned = true;
+                GameObject enemy = Level_2_ChooseRandomEnemy();
+                Transform enemyLocation = ChooseRandomSpawnLocation();
+                GameObject spawnedEnemy = Instantiate(enemy, enemyLocation);
+            }
         }
     }
 
@@ -73,10 +87,15 @@ public class SpawnWaves : MonoBehaviour
         return spawnLocations[randNumber].transform;
     }
 
-    private GameObject ChooseRandomEnemy() // Method for returning a random enemy from the enemies array.
+    private GameObject Level_1_ChooseRandomEnemy() // Method for returning a random enemy from the enemies array.
     {
-        int randNumber = Random.Range(0, 4);
-        return enemies[randNumber];
+        int randNumber = Random.Range(0, level_1_Enemies.Length);
+        return level_1_Enemies[randNumber];
+    }
+    private GameObject Level_2_ChooseRandomEnemy() // Method for returning a random enemy from the enemies array.
+    {
+        int randNumber = Random.Range(0, level_2_Enemies.Length);
+        return level_2_Enemies[randNumber];
     }
     public void SetHasSpawned(bool value) // Metgod to allow the ability to set the enemy spawn value in other scripts.
     {

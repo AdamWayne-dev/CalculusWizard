@@ -581,6 +581,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 8
+  moveUpAnimation: {fileID: 7400000, guid: 7dadd614b58b44b458fdbda5fe4cbc83, type: 2}
+  moveDownAnimation: {fileID: 7400000, guid: 8c86ca10394e941418de67cff1971dc4, type: 2}
+  animator: {fileID: 9102703325097737716}
 --- !u!114 &889035215244556308
 MonoBehaviour:
   m_ObjectHideFlags: 0

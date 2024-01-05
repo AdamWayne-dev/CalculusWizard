@@ -1209,11 +1209,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1612500262}
   m_CullTransparentMesh: 1
---- !u!95 &1796183410 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 9102703325097737716, guid: 38544d99d4f79784da7f1a37d26a5373, type: 3}
-  m_PrefabInstance: {fileID: 2135005411405368958}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2031799372
 GameObject:
   m_ObjectHideFlags: 0
@@ -1457,18 +1452,6 @@ PrefabInstance:
       propertyPath: healthSpriteRenderer
       value: 
       objectReference: {fileID: 2123702089}
-    - target: {fileID: 3639194999331071320, guid: 38544d99d4f79784da7f1a37d26a5373, type: 3}
-      propertyPath: animator
-      value: 
-      objectReference: {fileID: 1796183410}
-    - target: {fileID: 3639194999331071320, guid: 38544d99d4f79784da7f1a37d26a5373, type: 3}
-      propertyPath: moveUpAnimation
-      value: 
-      objectReference: {fileID: 7400000, guid: 7dadd614b58b44b458fdbda5fe4cbc83, type: 2}
-    - target: {fileID: 3639194999331071320, guid: 38544d99d4f79784da7f1a37d26a5373, type: 3}
-      propertyPath: moveDownAnimation
-      value: 
-      objectReference: {fileID: 7400000, guid: 8c86ca10394e941418de67cff1971dc4, type: 2}
     - target: {fileID: 8809786413457561251, guid: 38544d99d4f79784da7f1a37d26a5373, type: 3}
       propertyPath: m_Name
       value: Player

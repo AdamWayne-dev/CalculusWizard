@@ -13,6 +13,9 @@ TagManager:
   - GreenEnemy
   - Boss_Level_1
   - BossSpell
+  - Lv2_Enemy_1
+  - Lv2_Enemy_2
+  - Lv2_Enemy_3
   layers:
   - Default
   - TransparentFX

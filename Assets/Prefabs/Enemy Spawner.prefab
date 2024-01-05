@@ -56,7 +56,7 @@ Transform:
   m_GameObject: {fileID: 3573705502027425254}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -2.49, z: 0}
+  m_LocalPosition: {x: 0, y: -1.25, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -176,11 +176,16 @@ MonoBehaviour:
   - {fileID: 7070026812311810612}
   - {fileID: 9128393671431936221}
   - {fileID: 3573705502027425254}
-  enemies:
+  level_1_Enemies:
+  - {fileID: 647468542501600910, guid: 929b398fbde42454d927abdfcade4413, type: 3}
   - {fileID: 647468542501600910, guid: 6f6742dd2cb097f4faf5f2ec75750051, type: 3}
   - {fileID: 647468542501600910, guid: 11fefc02ea876ec40b0b465a34a75737, type: 3}
-  - {fileID: 647468542501600910, guid: 929b398fbde42454d927abdfcade4413, type: 3}
   - {fileID: 647468542501600910, guid: 160807e0b27a6df40b68491303c3c5b6, type: 3}
+  level_2_Enemies:
+  - {fileID: 242857751792302432, guid: ba140aa3e16a1fe49b803f1f0819cf5d, type: 3}
+  - {fileID: 3085750189783236356, guid: d776f580a4985124b82659afe64b6711, type: 3}
+  - {fileID: 1947304786226597406, guid: 8015a1b6135f7214789ff72870312f36, type: 3}
+  level_3_Enemies: []
   boss_Lvl_1_Prefab: {fileID: 5163570132188328939, guid: 0010f1e4789719647919c614dd6aeb7d, type: 3}
   bossSpawnLocation: {fileID: 5462831189177489566}
   bossMoveTo: {fileID: 2783895987432178500}
@@ -256,7 +261,7 @@ Transform:
   m_GameObject: {fileID: 7070026812311810612}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.99, z: 0}
+  m_LocalPosition: {x: 0, y: 1.18, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -322,7 +327,7 @@ Transform:
   m_GameObject: {fileID: 9128393671431936221}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 4, z: 0}
+  m_LocalPosition: {x: 0, y: 3.93, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

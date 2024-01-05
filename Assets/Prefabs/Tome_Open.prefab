@@ -161,7 +161,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 5
   m_Sprite: {fileID: 21300000, guid: 06ab53127ecf53c4fa888cde7ee470e9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -222,11 +222,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   leftPage: {fileID: 6656805271509101197}
   rightPage: {fileID: 2118501042237317316}
-  spells:
+  lv1_Spells:
   - {fileID: 21300000, guid: abc9312c4e4140e428cd628b7f80a31c, type: 3}
   - {fileID: 21300000, guid: 3b00018b7aaedfc4faa2d22c9914f6d1, type: 3}
   - {fileID: 21300000, guid: a3c90a529cde426439fcb37892da0988, type: 3}
   - {fileID: 21300000, guid: 81d2f56a302b4fa4798acef97dc77a22, type: 3}
+  lv2_Spells: []
+  lv2_poolOfSpells:
+  - {fileID: 21300000, guid: fd134d30879b65e4f9dccd74259667b4, type: 3}
+  - {fileID: 21300000, guid: b1d192acd0d74b0489cafb67ffa6867c, type: 3}
+  - {fileID: 21300000, guid: 5786240eb0a12114d9e79835c7f1f3d3, type: 3}
+  - {fileID: 21300000, guid: 0c3df90c1bd88f84a8f8ccd875247e25, type: 3}
+  - {fileID: 21300000, guid: ec08443dc98be8a4bb212f4df849a919, type: 3}
+  - {fileID: 21300000, guid: 8af86948aa3155840b72642c30a37ed9, type: 3}
+  - {fileID: 21300000, guid: fca5768ae45e6174a9d0d02889805027, type: 3}
+  lv2_temp_spellpool: []
+  lv3_Spells: []
+  lv3_poolOfSpells: []
 --- !u!82 &5928108375047064770
 AudioSource:
   m_ObjectHideFlags: 0
@@ -395,7 +407,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 3
+  m_SortingOrder: 6
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -479,7 +491,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 3
+  m_SortingOrder: 6
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
