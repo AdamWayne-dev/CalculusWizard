@@ -15,12 +15,15 @@ public class PopulatePages : MonoBehaviour
     [SerializeField] Sprite[] lv1_Spells;
     [SerializeField] Sprite[] lv2_Spells;
     [SerializeField] Sprite[] lv2_poolOfSpells;
-    [SerializeField] List<Sprite> lv2_temp_spellpool;
     [SerializeField] Sprite[] lv3_Spells;
     [SerializeField] Sprite[] lv3_poolOfSpells;
 
+    public int[] spellIndexList;
     private bool[] spellsCollected;
+    private bool[] lv2_spellsCollected;
     private int spellIndex;
+    private int lv2_spellIndex;
+    private int lv3_spellIndex;
     private bool spellExists;
     private bool lv2_spellsPopulated;
     private bool lv2_tempSpellsPopulated;
@@ -31,12 +34,11 @@ public class PopulatePages : MonoBehaviour
         lv2_spellsPopulated = false;
         lv2_tempSpellsPopulated = false;
         spellsCollected = new bool[4];
-        lv2_Spells = new Sprite[4];
-        lv2_temp_spellpool = new List<Sprite>();
+        lv2_spellsCollected = new bool[7];
+        lv2_Spells = new Sprite[7];
         collideWithEnemy = FindObjectOfType<CollideWithEnemy>();
         cycleSpells = FindObjectOfType<CycleSpells>();
         fireSpells = FindObjectOfType<FireSpells>();
-        Populate_Temp_Lv2Spells_List();
         Populate_Lv2_Spells();
     }
 
@@ -44,6 +46,7 @@ public class PopulatePages : MonoBehaviour
     void Update()
     {
         spellIndex = cycleSpells.GetSpellIndex();
+        lv2_spellIndex = cycleSpells.GetSpellIndex();
         spellExists = fireSpells.GetSpellExists();
         DisplayLeftPage();
         DisplayRightPage();
@@ -81,26 +84,42 @@ public class PopulatePages : MonoBehaviour
                 }
                 break;
             case 2:
-                switch (spellIndex)
+                switch (lv2_spellIndex)
                 {
                     case 0:
-                        leftPage.sprite = lv2_Spells[spellIndex];
+                        leftPage.sprite = lv2_poolOfSpells[spellIndex];
 
                         break;
 
                     case 1:
-                        leftPage.sprite = lv2_Spells[spellIndex];
+                        leftPage.sprite = lv2_poolOfSpells[spellIndex];
 
                         break;
 
                     case 2:
-                        leftPage.sprite = lv2_Spells[spellIndex];
+                        leftPage.sprite = lv2_poolOfSpells[spellIndex];
 
                         break;
 
                     case 3:
-                        leftPage.sprite = lv2_Spells[spellIndex];
+                        leftPage.sprite = lv2_poolOfSpells[spellIndex];
 
+                        break;
+
+                    case 4:
+                        leftPage.sprite = lv2_poolOfSpells[spellIndex];
+                        break;
+
+                    case 5:
+                        leftPage.sprite= lv2_poolOfSpells[spellIndex];
+                        break;
+
+                    case 6:
+                        leftPage.sprite = lv2_poolOfSpells[spellIndex];
+                        break;
+
+                    case 7:
+                        leftPage.sprite = lv2_poolOfSpells[spellIndex];
                         break;
                 }
                 break;
@@ -109,63 +128,163 @@ public class PopulatePages : MonoBehaviour
 
     public void DisplayRightPage() // Checks to see if the page has been collected, and if it hasnt - displays the page once collected.
     {
-        switch (spellIndex)
+        switch (SceneManager.GetActiveScene().buildIndex)
         {
-            case 0:
-                if (spellsCollected[2])
-                {
-                    rightPage.sprite = lv1_Spells[2];
-                }
-                else
-                {
-                    rightPage.sprite = null;
-                }
-                break;
-
             case 1:
-                if (spellsCollected[0])
+                switch (spellIndex)
                 {
-                    rightPage.sprite = lv1_Spells[0];
-                }
-                else
-                {
-                    rightPage.sprite = null;
+                    case 0:
+                        if (spellsCollected[2])
+                        {
+                            rightPage.sprite = lv1_Spells[2];
+                        }
+                        else
+                        {
+                            rightPage.sprite = null;
+                        }
+                        break;
+
+                    case 1:
+                        if (spellsCollected[0])
+                        {
+                            rightPage.sprite = lv1_Spells[0];
+                        }
+                        else
+                        {
+                            rightPage.sprite = null;
+                        }
+                        break;
+
+                    case 2:
+                        if (spellsCollected[3])
+                        {
+                            rightPage.sprite = lv1_Spells[3];
+                        }
+                        else
+                        {
+                            rightPage.sprite = null;
+                        }
+                        break;
+
+                    case 3:
+                        if (spellsCollected[1])
+                        {
+                            rightPage.sprite = lv1_Spells[1];
+                        }
+                        else
+                        {
+                            rightPage.sprite = null;
+                        }
+                        break;
                 }
                 break;
-
             case 2:
-                if (spellsCollected[3])
+                switch (spellIndex)
                 {
-                    rightPage.sprite = lv1_Spells[3];
-                }
-                else
-                {
-                    rightPage.sprite = null;
-                }
-                break;
+                    case 0:
+                        if (lv2_spellsCollected[0])
+                        {
+                            rightPage.sprite = lv2_poolOfSpells[0];
+                        }
+                        else
+                        {
+                            rightPage.sprite = null;
+                        }
+                        break;
 
-            case 3:
-                if (spellsCollected[1])
-                {
-                    rightPage.sprite = lv1_Spells[1];
-                }
-                else
-                {
-                    rightPage.sprite = null;
+                    case 1:
+                        if (lv2_spellsCollected[1])
+                        {
+                            rightPage.sprite = lv2_poolOfSpells[1];
+                        }
+                        else
+                        {
+                            rightPage.sprite = null;
+                        }
+                        break;
+
+                    case 2:
+                        if (lv2_spellsCollected[2])
+                        {
+                            rightPage.sprite = lv2_poolOfSpells[2];
+                        }
+                        else
+                        {
+                            rightPage.sprite = null;
+                        }
+                        break;
+
+                    case 3:
+                        if (lv2_spellsCollected[3])
+                        {
+                            rightPage.sprite = lv2_poolOfSpells[3];
+                        }
+                        else
+                        {
+                            rightPage.sprite = null;
+                        }
+                        break;
+
+                    case 4:
+                        if (lv2_spellsCollected[4])
+                        {
+                            rightPage.sprite = lv2_poolOfSpells[4];
+                        }
+                        else
+                        {
+                            rightPage.sprite = null;
+                        }
+                        break;
+
+                    case 5:
+                        if (lv2_spellsCollected[5])
+                        {
+                            rightPage.sprite = lv2_poolOfSpells[5];
+                        }
+                        else
+                        {
+                            rightPage.sprite = null;
+                        }
+                        break;
+
+                    case 6:
+                        if (lv2_spellsCollected[6])
+                        {
+                            rightPage.sprite = lv2_poolOfSpells[6];
+                        }
+                        else
+                        {
+                            rightPage.sprite = null;
+                        }
+                        break;
+
                 }
                 break;
         }
-        
     }
 
     public void SetSpellsCollected(int value, bool state)
     {
-        spellsCollected[value] = state;
+        switch (SceneManager.GetActiveScene().buildIndex)
+        {
+            case 1:
+                spellsCollected[value] = state;
+                break;
+
+            case 2:
+                lv2_spellsCollected[value] = state;
+                break;
+        }
     }
 
     public bool GetSpellsCollected(int value)
     {
         return spellsCollected[value];
+    }
+
+    public bool Get_Lv2_SpellsCollected(int value)
+    {
+        return lv2_spellsCollected[value];
     }
 
     private void Populate_Lv2_Spells()
@@ -176,26 +295,10 @@ public class PopulatePages : MonoBehaviour
             
             for (int i = 0; i < lv2_Spells.Length; i++)
             {
-                int num = Random.Range(0, (lv2_temp_spellpool.Count - 1));
-                Debug.Log(num);
-                Debug.Log(lv2_temp_spellpool[num]);
-                lv2_Spells[i] = lv2_temp_spellpool[num];
-                lv2_temp_spellpool.RemoveAt(num);
+                lv2_Spells[i] = lv2_poolOfSpells[i];
             }
             lv2_spellsPopulated = true;
+            
         }
-    }
-    
-    private void Populate_Temp_Lv2Spells_List()
-    {
-        if (!lv2_tempSpellsPopulated)
-        {
-            for (int i = 0; i < lv2_poolOfSpells.Length; i++)
-            {
-                lv2_temp_spellpool.Add(lv2_poolOfSpells[i]);
-            }
-            lv2_tempSpellsPopulated = true;
-        }
-        Debug.Log("Temp spells allocated");
-    }
+    } 
 }

@@ -22,14 +22,14 @@ public class AnimatePage : MonoBehaviour
 
     private void AnimatePages() // Animates the pages of the tome when the spell is changed.
     {
-        if (Input.GetKeyDown(KeyCode.E) && !spellExists)
+        if ((Input.GetKeyDown(KeyCode.E) || Input.GetAxisRaw("Mouse ScrollWheel") > 0f) && !spellExists)
         {
             animator.Play("PageTurnAnimation");
             audioSource.pitch = Random.Range(0.65f, 0.8f);
             audioSource.Play();
         }
 
-        if (Input.GetKeyDown(KeyCode.Q) && !spellExists)
+        if ((Input.GetKeyDown(KeyCode.Q) || Input.GetAxisRaw("Mouse ScrollWheel") < 0f) && !spellExists)
         {
             animator.Play("PageTurnAnimation");
             audioSource.pitch = Random.Range(0.65f, 0.8f);

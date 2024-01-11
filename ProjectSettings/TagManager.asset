@@ -16,6 +16,11 @@ TagManager:
   - Lv2_Enemy_1
   - Lv2_Enemy_2
   - Lv2_Enemy_3
+  - Lv2_Enemy_4
+  - Lv2_Enemy_5
+  - Lv2_Enemy_6
+  - Lv2_Enemy_7
+  - Boss_Level_2
   layers:
   - Default
   - TransparentFX

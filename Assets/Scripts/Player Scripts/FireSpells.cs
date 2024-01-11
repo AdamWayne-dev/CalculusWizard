@@ -10,13 +10,17 @@ public class FireSpells : MonoBehaviour
     [SerializeField] CycleSpells cycleSpells;
     [SerializeField] float fireSpeed = 7f;
 
+    [SerializeField] Sprite[] spellSprites;
+
+    SpriteRenderer spellRenderer;
     GameObject spell;
-    
+
+    private int spellIndex;
     private bool spellExists = false;
 
     void Update()
     {
-        
+        spellIndex = cycleSpells.GetSpellIndex();
         SetCurrentSpell();
         FireSpell();
     }
@@ -29,6 +33,9 @@ public class FireSpells : MonoBehaviour
             audioSource.pitch = Random.Range(0.7f, 1f);
             audioSource.Play();
             spell = Instantiate(fireSpellPrefab, transform.position, Quaternion.identity);
+            spellRenderer = spell.GetComponent<SpriteRenderer>();
+            spellRenderer.sprite = spellSprites[spellIndex];
+            
             
         }
         if (spellExists)

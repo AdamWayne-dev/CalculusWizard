@@ -130,7 +130,15 @@ MonoBehaviour:
   audioSource: {fileID: 5343078939463479424}
   fireSpellPrefab: {fileID: 986366645337047107, guid: c89a7ef6c8d390049927e4edf7b27a90, type: 3}
   cycleSpells: {fileID: 6911272515517808764}
-  fireSpeed: 7
+  fireSpeed: 9
+  spellSprites:
+  - {fileID: 21300000, guid: fd134d30879b65e4f9dccd74259667b4, type: 3}
+  - {fileID: 21300000, guid: b1d192acd0d74b0489cafb67ffa6867c, type: 3}
+  - {fileID: 21300000, guid: 5786240eb0a12114d9e79835c7f1f3d3, type: 3}
+  - {fileID: 21300000, guid: 0c3df90c1bd88f84a8f8ccd875247e25, type: 3}
+  - {fileID: 21300000, guid: ec08443dc98be8a4bb212f4df849a919, type: 3}
+  - {fileID: 21300000, guid: 8af86948aa3155840b72642c30a37ed9, type: 3}
+  - {fileID: 21300000, guid: fca5768ae45e6174a9d0d02889805027, type: 3}
 --- !u!82 &5343078939463479424
 AudioSource:
   m_ObjectHideFlags: 0
@@ -330,6 +338,9 @@ MonoBehaviour:
   waterSpell: {r: 0, g: 1, b: 0.929394, a: 1}
   earthSpell: {r: 0.110440984, g: 0.41509432, b: 0, a: 1}
   lightningSpell: {r: 1, g: 0.9147998, b: 0, a: 1}
+  spell_5: {r: 1, g: 0, b: 0.54232264, a: 1}
+  spell_6: {r: 0.01234436, g: 0, b: 1, a: 1}
+  spell_7: {r: 1, g: 0, b: 0, a: 1}
 --- !u!1 &5158582896020349940
 GameObject:
   m_ObjectHideFlags: 0
@@ -619,6 +630,14 @@ MonoBehaviour:
   - {fileID: 986366645337047107, guid: dc9c527dd23dcf7429138ad16507d530, type: 3}
   - {fileID: 986366645337047107, guid: 487ad729d13cae44c86a89de60ccadba, type: 3}
   - {fileID: 986366645337047107, guid: a724b611384bf424bb95be6ca3f852fd, type: 3}
+  lvl_2_SpellPrefabs:
+  - {fileID: 6701313431871972722, guid: e0bd2e9cd50639d4fa71c55fcb09c259, type: 3}
+  - {fileID: 6701313431871972722, guid: 466f6fc1ccbd0f341862daf1a92547ce, type: 3}
+  - {fileID: 6701313431871972722, guid: f69d556b5ec8053458416375054fb930, type: 3}
+  - {fileID: 6701313431871972722, guid: 7acd3404bfc154f4e8d26567bb39f5d5, type: 3}
+  - {fileID: 6701313431871972722, guid: 3c3b45272decff74cae75dd33f31524d, type: 3}
+  - {fileID: 6701313431871972722, guid: 12d893e7d1a1cb0459e581ec7a44cbd6, type: 3}
+  - {fileID: 6701313431871972722, guid: edc6e627b90167f4ca82fd3a5200b595, type: 3}
 --- !u!95 &9102703325097737716
 Animator:
   serializedVersion: 5

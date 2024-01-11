@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CycleSpells : MonoBehaviour
 {
     FireSpells fireSpells;
     [SerializeField] GameObject[] spellPrefabs;
+    [SerializeField] GameObject[] lvl_2_SpellPrefabs;
     private GameObject currentSpell;
     private int spellIndex = 0;
     private bool doesSpellExist;
@@ -30,31 +32,65 @@ public class CycleSpells : MonoBehaviour
 
     public void SpellCycle() // cycle through the array of spells using 'E' to go forwards and 'Q' to go backwards.
     {   
-        
-        if ((Input.GetKeyDown(KeyCode.E)|| Input.GetAxisRaw("Mouse ScrollWheel") > 0f) && !doesSpellExist)
-        {      
-            spellIndex++;
-            if (spellIndex == spellPrefabs.Length)
-            {
-                spellIndex = 0;
-            }
-                     
-        }
-
-        if ((Input.GetKeyDown(KeyCode.Q) || Input.GetAxisRaw("Mouse ScrollWheel") < 0f) && !doesSpellExist)
+        switch (SceneManager.GetActiveScene().buildIndex)
         {
-            spellIndex--;
-            if (spellIndex < 0)
+            case 1:
+            if ((Input.GetKeyDown(KeyCode.E)|| Input.GetAxisRaw("Mouse ScrollWheel") > 0f) && !doesSpellExist)
+            {      
+                spellIndex++;
+                if (spellIndex == spellPrefabs.Length)
+                {
+                    spellIndex = 0;
+                }
+                     
+            }
+
+            if ((Input.GetKeyDown(KeyCode.Q) || Input.GetAxisRaw("Mouse ScrollWheel") < 0f) && !doesSpellExist)
             {
-                spellIndex = spellPrefabs.Length - 1;
-            }                  
+                spellIndex--;
+                if (spellIndex < 0)
+                {
+                    spellIndex = spellPrefabs.Length - 1;
+                }                  
            
+            }
+                break;
+
+            case 2:
+                if ((Input.GetKeyDown(KeyCode.E) || Input.GetAxisRaw("Mouse ScrollWheel") > 0f) && !doesSpellExist)
+                {
+                    spellIndex++;
+                    if (spellIndex == lvl_2_SpellPrefabs.Length)
+                    {
+                        spellIndex = 0;
+                    }
+                }
+
+                if ((Input.GetKeyDown(KeyCode.Q) || Input.GetAxisRaw("Mouse ScrollWheel") < 0f) && !doesSpellExist)
+                {
+                    spellIndex--;
+                    if (spellIndex < 0)
+                    {
+                        spellIndex = lvl_2_SpellPrefabs.Length - 1;
+                    }
+                }
+                break;
         }
     }
 
     public void SetSpell()
     {
-        currentSpell = spellPrefabs[spellIndex];
+        switch (SceneManager.GetActiveScene().buildIndex)
+        {
+            case 1:
+            currentSpell = spellPrefabs[spellIndex];
+                break;
+
+            case 2:
+            currentSpell = lvl_2_SpellPrefabs[spellIndex];
+                break;
+
+        }
     }
 
     public int GetSpellIndex()

@@ -17,17 +17,22 @@ public class CollideWithEnemy : MonoBehaviour
     [SerializeField] GameObject spellBoof;
 
     private bool[] spellsCollected;
+    public bool[] lv2_spellsCollected;
 
     private bool bossIsCastingSpell_0;
     private bool bossIsCastingSpell_1;
     private bool bossIsCastingSpell_2;
     private bool bossIsCastingSpell_3;
+    private bool bossIsCastingSpell_4;
+    private bool bossIsCastingSpell_5;
+    private bool bossIsCastingSpell_6;
  
    
     
     private void Start()
     {         
         spellsCollected = new bool[4];
+        lv2_spellsCollected = new bool[7];
         levelManager = FindObjectOfType<LevelManager>();
         populate = FindObjectOfType<PopulatePages>();
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -38,6 +43,10 @@ public class CollideWithEnemy : MonoBehaviour
     void Update()
     {
         PopulateSpells();
+        if (SceneManager.GetActiveScene().buildIndex == 2)
+        { 
+            Populate_Lv2_Spells();
+        }
         CheckCastingStatus();
     }
 
@@ -48,6 +57,18 @@ public class CollideWithEnemy : MonoBehaviour
         spellsCollected[2] = populate.GetSpellsCollected(2);
         spellsCollected[3] = populate.GetSpellsCollected(3);
         spellIndex = cycleSpells.GetSpellIndex();
+    }
+
+    private void Populate_Lv2_Spells()
+    {
+        lv2_spellsCollected[0] = populate.Get_Lv2_SpellsCollected(0);
+        lv2_spellsCollected[1] = populate.Get_Lv2_SpellsCollected(1);
+        lv2_spellsCollected[2] = populate.Get_Lv2_SpellsCollected(2);
+        lv2_spellsCollected[3] = populate.Get_Lv2_SpellsCollected(3);
+        lv2_spellsCollected[4] = populate.Get_Lv2_SpellsCollected(4);
+        lv2_spellsCollected[5] = populate.Get_Lv2_SpellsCollected(5);
+        lv2_spellsCollected[6] = populate.Get_Lv2_SpellsCollected(6);
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision) /* Checks to see what level it is and then what "type" an enemy is and depending on which spell is selected, will either
@@ -185,39 +206,209 @@ public class CollideWithEnemy : MonoBehaviour
                 switch (spellIndex)
                 {
                     case 0:
-                        if (collision.tag == "Lv2_Enemy_1")
+                        if (collision.tag == gameObject.tag)
                         {
-                            if (!spellsCollected[0])
+                            if (!lv2_spellsCollected[0])
                             {
                                 populate.SetSpellsCollected(0, true);
                             }
                             fireSpells.SetSpellExists(false);
                             spawnWaves.SetHasSpawned(false);
-                            levelManager.SetScore(15);
+                            levelManager.SetScore(30);
                             Destroy(collision.gameObject);
                             spriteRenderer.enabled = false;
                             StartCoroutine(SpellBoofDelay());
                         }
 
-                        else if (collision.tag == "Boss_Level_1")
+                        else if (collision.tag == "Boss_Level_2")
                         {
-                            Boss_Level_1_Check_Spell_2();
+                            Boss_Level_2_Check_Spell_0();
                         }
 
                         else
                         {
 
-                            levelManager.SetScore(-5);
+                            levelManager.SetScore(-10);
                             fireSpells.SetSpellExists(false);
                             spriteRenderer.enabled = false;
                             StartCoroutine(SpellBoofDelay());
                         }
                         break;
                     case 1:
+                        if (collision.tag == gameObject.tag)
+                        {
+                            if (!lv2_spellsCollected[1])
+                            {
+                                populate.SetSpellsCollected(1, true);
+                            }
+                            fireSpells.SetSpellExists(false);
+                            spawnWaves.SetHasSpawned(false);
+                            levelManager.SetScore(30);
+                            Destroy(collision.gameObject);
+                            spriteRenderer.enabled = false;
+                            StartCoroutine(SpellBoofDelay());
+                        }
+
+                        else if (collision.tag == "Boss_Level_2")
+                        {
+                            Boss_Level_2_Check_Spell_1();
+                        }
+
+                        else
+                        {
+
+                            levelManager.SetScore(-10);
+                            fireSpells.SetSpellExists(false);
+                            spriteRenderer.enabled = false;
+                            StartCoroutine(SpellBoofDelay());
+                        }
                         break;
                     case 2:
+                        if (collision.tag == gameObject.tag)
+                        {
+                            if (!lv2_spellsCollected[2])
+                            {
+                                populate.SetSpellsCollected(2, true);
+                            }
+                            fireSpells.SetSpellExists(false);
+                            spawnWaves.SetHasSpawned(false);
+                            levelManager.SetScore(30);
+                            Destroy(collision.gameObject);
+                            spriteRenderer.enabled = false;
+                            StartCoroutine(SpellBoofDelay());
+                        }
+
+                        else if (collision.tag == "Boss_Level_2")
+                        {
+                            Boss_Level_2_Check_Spell_2();
+                        }
+
+                        else
+                        {
+
+                            levelManager.SetScore(-10);
+                            fireSpells.SetSpellExists(false);
+                            spriteRenderer.enabled = false;
+                            StartCoroutine(SpellBoofDelay());
+                        }
                         break;
                     case 3:
+                        if (collision.tag == gameObject.tag)
+                        {
+                            if (!lv2_spellsCollected[3])
+                            {
+                                populate.SetSpellsCollected(3, true);
+                            }
+                            fireSpells.SetSpellExists(false);
+                            spawnWaves.SetHasSpawned(false);
+                            levelManager.SetScore(30);
+                            Destroy(collision.gameObject);
+                            spriteRenderer.enabled = false;
+                            StartCoroutine(SpellBoofDelay());
+                        }
+
+                        else if (collision.tag == "Boss_Level_2")
+                        {
+                            Boss_Level_2_Check_Spell_3();
+                        }
+
+                        else
+                        {
+
+                            levelManager.SetScore(-10);
+                            fireSpells.SetSpellExists(false);
+                            spriteRenderer.enabled = false;
+                            StartCoroutine(SpellBoofDelay());
+                        }
+                        break;
+                    case 4:
+                        if (collision.tag == gameObject.tag)
+                        {
+                            if (!lv2_spellsCollected[4])
+                            {
+                                populate.SetSpellsCollected(4, true);
+                            }
+                            fireSpells.SetSpellExists(false);
+                            spawnWaves.SetHasSpawned(false);
+                            levelManager.SetScore(30);
+                            Destroy(collision.gameObject);
+                            spriteRenderer.enabled = false;
+                            StartCoroutine(SpellBoofDelay());
+                        }
+
+                        else if (collision.tag == "Boss_Level_2")
+                        {
+                            Boss_Level_2_Check_Spell_4();
+                        }
+
+                        else
+                        {
+
+                            levelManager.SetScore(-10);
+                            fireSpells.SetSpellExists(false);
+                            spriteRenderer.enabled = false;
+                            StartCoroutine(SpellBoofDelay());
+                        }
+                        break;
+
+                    case 5:
+                        if (collision.tag == gameObject.tag)
+                        {
+                            if (!lv2_spellsCollected[5])
+                            {
+                                populate.SetSpellsCollected(5, true);
+                            }
+                            fireSpells.SetSpellExists(false);
+                            spawnWaves.SetHasSpawned(false);
+                            levelManager.SetScore(30);
+                            Destroy(collision.gameObject);
+                            spriteRenderer.enabled = false;
+                            StartCoroutine(SpellBoofDelay());
+                        }
+
+                        else if (collision.tag == "Boss_Level_2")
+                        {
+                            Boss_Level_2_Check_Spell_5();
+                        }
+
+                        else
+                        {
+
+                            levelManager.SetScore(-10);
+                            fireSpells.SetSpellExists(false);
+                            spriteRenderer.enabled = false;
+                            StartCoroutine(SpellBoofDelay());
+                        }
+                        break;
+
+                    case 6:
+                        if (collision.tag == gameObject.tag)
+                        {
+                            if (!lv2_spellsCollected[6])
+                            {
+                                populate.SetSpellsCollected(6, true);
+                            }
+                            fireSpells.SetSpellExists(false);
+                            spawnWaves.SetHasSpawned(false);
+                            levelManager.SetScore(30);
+                            Destroy(collision.gameObject);
+                            spriteRenderer.enabled = false;
+                            StartCoroutine(SpellBoofDelay());
+                        }
+
+                        else if (collision.tag == "Boss_Level_2")
+                        {
+                            Boss_Level_2_Check_Spell_6();
+                        }
+
+                        else
+                        {
+
+                            levelManager.SetScore(-10);
+                            fireSpells.SetSpellExists(false);
+                            spriteRenderer.enabled = false;
+                            StartCoroutine(SpellBoofDelay());
+                        }
                         break;
                 }
                 break;
@@ -305,6 +496,153 @@ public class CollideWithEnemy : MonoBehaviour
             StartCoroutine(SpellBoofDelay());
         }
     }
+
+    private void Boss_Level_2_Check_Spell_0()
+    {
+        if (bossIsCastingSpell_0)
+        {
+            spawnWaves.DamageBoss();
+            fireSpells.SetSpellExists(false);
+            levelManager.SetScore(30);
+            spriteRenderer.enabled = false;
+            StartCoroutine(SpellBoofDelay());
+        }
+
+        else
+        {
+            // Add stun to player?
+            levelManager.SetScore(-10);
+            fireSpells.SetSpellExists(false);
+            spriteRenderer.enabled = false;
+            StartCoroutine(SpellBoofDelay());
+        }
+    }
+
+    private void Boss_Level_2_Check_Spell_1()
+    {
+        if (bossIsCastingSpell_1)
+        {
+            spawnWaves.DamageBoss();
+            fireSpells.SetSpellExists(false);
+            levelManager.SetScore(30);
+            spriteRenderer.enabled = false;
+            StartCoroutine(SpellBoofDelay());
+        }
+
+        else
+        {
+            // Add stun to player?
+            levelManager.SetScore(-10);
+            fireSpells.SetSpellExists(false);
+            spriteRenderer.enabled = false;
+            StartCoroutine(SpellBoofDelay());
+        }
+    }
+
+    private void Boss_Level_2_Check_Spell_2()
+    {
+        if (bossIsCastingSpell_2)
+        {
+            spawnWaves.DamageBoss();
+            fireSpells.SetSpellExists(false);
+            levelManager.SetScore(30);
+            spriteRenderer.enabled = false;
+            StartCoroutine(SpellBoofDelay());
+        }
+
+        else
+        {
+            // Add stun to player?
+            levelManager.SetScore(-10);
+            fireSpells.SetSpellExists(false);
+            spriteRenderer.enabled = false;
+            StartCoroutine(SpellBoofDelay());
+        }
+    }
+
+    private void Boss_Level_2_Check_Spell_3()
+    {
+        if (bossIsCastingSpell_3)
+        {
+            spawnWaves.DamageBoss();
+            fireSpells.SetSpellExists(false);
+            levelManager.SetScore(30);
+            spriteRenderer.enabled = false;
+            StartCoroutine(SpellBoofDelay());
+        }
+
+        else
+        {
+            // Add stun to player?
+            levelManager.SetScore(-10);
+            fireSpells.SetSpellExists(false);
+            spriteRenderer.enabled = false;
+            StartCoroutine(SpellBoofDelay());
+        }
+    }
+
+    private void Boss_Level_2_Check_Spell_4()
+    {
+        if (bossIsCastingSpell_4)
+        {
+            spawnWaves.DamageBoss();
+            fireSpells.SetSpellExists(false);
+            levelManager.SetScore(30);
+            spriteRenderer.enabled = false;
+            StartCoroutine(SpellBoofDelay());
+        }
+
+        else
+        {
+            // Add stun to player?
+            levelManager.SetScore(-10);
+            fireSpells.SetSpellExists(false);
+            spriteRenderer.enabled = false;
+            StartCoroutine(SpellBoofDelay());
+        }
+    }
+
+    private void Boss_Level_2_Check_Spell_5()
+    {
+        if (bossIsCastingSpell_5)
+        {
+            spawnWaves.DamageBoss();
+            fireSpells.SetSpellExists(false);
+            levelManager.SetScore(30);
+            spriteRenderer.enabled = false;
+            StartCoroutine(SpellBoofDelay());
+        }
+
+        else
+        {
+            // Add stun to player?
+            levelManager.SetScore(-10);
+            fireSpells.SetSpellExists(false);
+            spriteRenderer.enabled = false;
+            StartCoroutine(SpellBoofDelay());
+        }
+    }
+
+    private void Boss_Level_2_Check_Spell_6()
+    {
+        if (bossIsCastingSpell_6)
+        {
+            spawnWaves.DamageBoss();
+            fireSpells.SetSpellExists(false);
+            levelManager.SetScore(30);
+            spriteRenderer.enabled = false;
+            StartCoroutine(SpellBoofDelay());
+        }
+
+        else
+        {
+            // Add stun to player?
+            levelManager.SetScore(-10);
+            fireSpells.SetSpellExists(false);
+            spriteRenderer.enabled = false;
+            StartCoroutine(SpellBoofDelay());
+        }
+    }
     #endregion
     IEnumerator SpellBoofDelay()
     {
@@ -322,6 +660,9 @@ public class CollideWithEnemy : MonoBehaviour
         bossIsCastingSpell_1 = spawnWaves.IsCastingSpell_2();
         bossIsCastingSpell_2 = spawnWaves.IsCastingSpell_3();
         bossIsCastingSpell_3 = spawnWaves.IsCastingSpell_4();
+        bossIsCastingSpell_4 = spawnWaves.IsCastingSpell_5();
+        bossIsCastingSpell_5 = spawnWaves.IsCastingSpell_6();
+        bossIsCastingSpell_6 = spawnWaves.IsCastingSpell_7();
     }  
     
     private void PlayAudioHit()
