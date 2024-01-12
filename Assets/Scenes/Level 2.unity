@@ -805,6 +805,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LevelLoader
       objectReference: {fileID: 0}
+    - target: {fileID: 3119310783497484598, guid: fbf64469208b03a438f71d3a3a667363, type: 3}
+      propertyPath: pauseScreen
+      value: 
+      objectReference: {fileID: 1254374748}
     - target: {fileID: 5858364753859069964, guid: fbf64469208b03a438f71d3a3a667363, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -995,6 +999,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1163987272}
   m_CullTransparentMesh: 1
+--- !u!223 &1254374748 stripped
+Canvas:
+  m_CorrespondingSourceObject: {fileID: 5601527288350443342, guid: ba26f0df5073dab4996f4a97f9595ac7, type: 3}
+  m_PrefabInstance: {fileID: 3854265004009302794}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1568271722
 GameObject:
   m_ObjectHideFlags: 0
@@ -1587,6 +1596,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Game Manager
       objectReference: {fileID: 0}
+    - target: {fileID: 866441818995084180, guid: ba26f0df5073dab4996f4a97f9595ac7, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1936724362364542589, guid: ba26f0df5073dab4996f4a97f9595ac7, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 808831557}
     - target: {fileID: 3407534431947155867, guid: ba26f0df5073dab4996f4a97f9595ac7, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1635,6 +1652,10 @@ PrefabInstance:
       propertyPath: timerText
       value: 
       objectReference: {fileID: 560970283}
+    - target: {fileID: 4030892315046692029, guid: ba26f0df5073dab4996f4a97f9595ac7, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5143141185068188809, guid: ba26f0df5073dab4996f4a97f9595ac7, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -1643,7 +1664,15 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 808831557}
+    - target: {fileID: 5601527288350443342, guid: ba26f0df5073dab4996f4a97f9595ac7, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5978008583194391178, guid: ba26f0df5073dab4996f4a97f9595ac7, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 808831557}
+    - target: {fileID: 7397365049840800962, guid: ba26f0df5073dab4996f4a97f9595ac7, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 808831557}

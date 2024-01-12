@@ -17,12 +17,13 @@ public class ShieldFollowBoss : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {          
-        hasSpawned = spawnwaves.GetBossSpawn();
-        if (hasSpawned)
-        {
-            transform.position = spawnwaves.GetBossPosition().position - new Vector3(0,3.5f,0);
-        }
+    {  
+            hasSpawned = spawnwaves.GetBossSpawn();
+            if (hasSpawned)
+            {
+                transform.position = spawnwaves.GetBossPosition().position - new Vector3(0, 3.5f, 0);
+            }
+        
     }
 
     public void SetShieldSprite(Sprite sprite)

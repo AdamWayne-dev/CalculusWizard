@@ -10,7 +10,7 @@ public class LevelManager : MonoBehaviour
     [SerializeField] Canvas levelEndCanvas;
     [SerializeField] Canvas gameOverCanvas;
 
-
+    LevelLoader levelLoader;
     SpawnWaves spawnWaves;
     PlayerStats playerStats;
     [SerializeField] TMP_Text timerText;
@@ -21,6 +21,7 @@ public class LevelManager : MonoBehaviour
     [SerializeField] float timer;
     static private int score;
 
+    private bool isPaused;
     private bool timerFinished;
     private bool levelComplete;
     private bool gameOver;
@@ -31,6 +32,7 @@ public class LevelManager : MonoBehaviour
     }
     void Start()
     {
+        levelLoader = FindObjectOfType<LevelLoader>();
         gameOver = false;
         levelComplete = false;
         timerFinished = false;
@@ -41,6 +43,7 @@ public class LevelManager : MonoBehaviour
 
     void Update()
     {
+        isPaused = levelLoader.GetPausedStatus();
         GetGameOver();
         CheckGameOver();
         CheckLevelComplete();
@@ -131,6 +134,11 @@ public class LevelManager : MonoBehaviour
             Time.timeScale = 0f;     
         }
 
+        else if (isPaused)
+        {
+            Time.timeScale = 0f;
+        }
+
         else
         {
             levelEndCanvas.enabled = false;
@@ -146,6 +154,11 @@ public class LevelManager : MonoBehaviour
             Time.timeScale = 0f;
         }
 
+        else if (isPaused)
+        {
+            Time.timeScale = 0f;
+        }
+
         else
         {
             gameOverCanvas.enabled = false;
@@ -153,6 +166,7 @@ public class LevelManager : MonoBehaviour
         }
     }
 
+    
 
     
 }

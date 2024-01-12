@@ -63,7 +63,9 @@ public class SpawnWaves : MonoBehaviour
         SpawnEnemies();
         CheckTimerComplete();
         SpawnBoss();
-        MoveBoss();
+        MoveBoss();    
+        
+
     }
 
     private void SpawnEnemies()
@@ -129,27 +131,27 @@ public class SpawnWaves : MonoBehaviour
                         bossSpawn = true;
                         bossHealth = 4;
                         boss = Instantiate(boss_Lvl_1_Prefab, bossSpawnLocation);
-                        shieldFollowBoss.SetShieldSprite(bossShieldSprites[0]);
+                        shieldFollowBoss.SetShieldSprite(bossShieldSprites[1]);
                     }
 
                     if (bossHealth == 3)
                     {
-                        shieldFollowBoss.SetShieldSprite(bossShieldSprites[1]);
+                        shieldFollowBoss.SetShieldSprite(bossShieldSprites[2]);
                     }
 
                     if (bossHealth == 2)
                     {
-                        shieldFollowBoss.SetShieldSprite(bossShieldSprites[2]);
+                        shieldFollowBoss.SetShieldSprite(bossShieldSprites[3]);
                     }
 
                     if (bossHealth == 1)
                     {
-                        shieldFollowBoss.SetShieldSprite(bossShieldSprites[3]);
+                        shieldFollowBoss.SetShieldSprite(bossShieldSprites[4]);
                     }
 
                     if (bossHealth == 0 && bossSpawn)
                     {
-                        
+                        bossSpawn = false;
                         levelManager.SetScore(50);
                         Destroy(boss);
                         StartCoroutine(EndLevel());
