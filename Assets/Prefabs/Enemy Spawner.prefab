@@ -189,7 +189,14 @@ MonoBehaviour:
   - {fileID: 1947304786226597406, guid: 7f76a26a9da0d9041972496e36c3b62d, type: 3}
   - {fileID: 1947304786226597406, guid: cb0d60a1b2bfc9647973a2e01c658c85, type: 3}
   - {fileID: 1947304786226597406, guid: 0f4cbb29e0e58834c83ce8e8c4967cde, type: 3}
-  level_3_Enemies: []
+  level_3_Enemies:
+  - {fileID: 242857751792302432, guid: ba140aa3e16a1fe49b803f1f0819cf5d, type: 3}
+  - {fileID: 3085750189783236356, guid: d776f580a4985124b82659afe64b6711, type: 3}
+  - {fileID: 1947304786226597406, guid: 8015a1b6135f7214789ff72870312f36, type: 3}
+  - {fileID: 1947304786226597406, guid: 71510e1c2cedddc4cb47e3c5654eb4e6, type: 3}
+  - {fileID: 1947304786226597406, guid: 7f76a26a9da0d9041972496e36c3b62d, type: 3}
+  - {fileID: 1947304786226597406, guid: cb0d60a1b2bfc9647973a2e01c658c85, type: 3}
+  - {fileID: 1947304786226597406, guid: 0f4cbb29e0e58834c83ce8e8c4967cde, type: 3}
   level_2_enemySprites:
   - {fileID: 21300000, guid: 7e051df6017950242b2cb744b441ac08, type: 3}
   - {fileID: 21300000, guid: 5c2e99e45b096fd4a958a2defcb0ab35, type: 3}

@@ -805,6 +805,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LevelLoader
       objectReference: {fileID: 0}
+    - target: {fileID: 3119310783497484598, guid: fbf64469208b03a438f71d3a3a667363, type: 3}
+      propertyPath: pauseScreen
+      value: 
+      objectReference: {fileID: 3854265004009302795}
     - target: {fileID: 5858364753859069964, guid: fbf64469208b03a438f71d3a3a667363, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1209,11 +1213,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1612500262}
   m_CullTransparentMesh: 1
---- !u!95 &1796183410 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 9102703325097737716, guid: 38544d99d4f79784da7f1a37d26a5373, type: 3}
-  m_PrefabInstance: {fileID: 2135005411405368958}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2031799372
 GameObject:
   m_ObjectHideFlags: 0
@@ -1457,18 +1456,6 @@ PrefabInstance:
       propertyPath: healthSpriteRenderer
       value: 
       objectReference: {fileID: 2123702089}
-    - target: {fileID: 3639194999331071320, guid: 38544d99d4f79784da7f1a37d26a5373, type: 3}
-      propertyPath: animator
-      value: 
-      objectReference: {fileID: 1796183410}
-    - target: {fileID: 3639194999331071320, guid: 38544d99d4f79784da7f1a37d26a5373, type: 3}
-      propertyPath: moveUpAnimation
-      value: 
-      objectReference: {fileID: 7400000, guid: 7dadd614b58b44b458fdbda5fe4cbc83, type: 2}
-    - target: {fileID: 3639194999331071320, guid: 38544d99d4f79784da7f1a37d26a5373, type: 3}
-      propertyPath: moveDownAnimation
-      value: 
-      objectReference: {fileID: 7400000, guid: 8c86ca10394e941418de67cff1971dc4, type: 2}
     - target: {fileID: 8809786413457561251, guid: 38544d99d4f79784da7f1a37d26a5373, type: 3}
       propertyPath: m_Name
       value: Player
@@ -1604,10 +1591,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Game Manager
       objectReference: {fileID: 0}
-    - target: {fileID: 2172023233050341976, guid: ba26f0df5073dab4996f4a97f9595ac7, type: 3}
-      propertyPath: m_Name
-      value: Restart Level Button
-      objectReference: {fileID: 0}
     - target: {fileID: 3407534431947155867, guid: ba26f0df5073dab4996f4a97f9595ac7, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1649,10 +1632,6 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3649078311136231104, guid: ba26f0df5073dab4996f4a97f9595ac7, type: 3}
-      propertyPath: timer
-      value: 60
-      objectReference: {fileID: 0}
-    - target: {fileID: 3649078311136231104, guid: ba26f0df5073dab4996f4a97f9595ac7, type: 3}
       propertyPath: scoreText
       value: 
       objectReference: {fileID: 483946255}
@@ -1664,55 +1643,30 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 808831557}
-    - target: {fileID: 5143141185068188809, guid: ba26f0df5073dab4996f4a97f9595ac7, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: RestartLevel
-      objectReference: {fileID: 0}
-    - target: {fileID: 5143141185068188809, guid: ba26f0df5073dab4996f4a97f9595ac7, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: LevelLoader, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 5413986625173886221, guid: ba26f0df5073dab4996f4a97f9595ac7, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5413986625173886221, guid: ba26f0df5073dab4996f4a97f9595ac7, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5413986625173886221, guid: ba26f0df5073dab4996f4a97f9595ac7, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 808831557}
-    - target: {fileID: 5413986625173886221, guid: ba26f0df5073dab4996f4a97f9595ac7, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5413986625173886221, guid: ba26f0df5073dab4996f4a97f9595ac7, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: GoToMainMenu
-      objectReference: {fileID: 0}
-    - target: {fileID: 5413986625173886221, guid: ba26f0df5073dab4996f4a97f9595ac7, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: LevelLoader, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 5413986625173886221, guid: ba26f0df5073dab4996f4a97f9595ac7, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 6232094398977403873, guid: ba26f0df5073dab4996f4a97f9595ac7, type: 3}
-      propertyPath: m_Name
-      value: Main Menu Button
+    - target: {fileID: 5699071004862686370, guid: ba26f0df5073dab4996f4a97f9595ac7, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9142882919227952561, guid: ba26f0df5073dab4996f4a97f9595ac7, type: 3}
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 519420031}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 2172023233050341976, guid: ba26f0df5073dab4996f4a97f9595ac7, type: 3}
+    - {fileID: 5699071004862686370, guid: ba26f0df5073dab4996f4a97f9595ac7, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ba26f0df5073dab4996f4a97f9595ac7, type: 3}
+--- !u!223 &3854265004009302795 stripped
+Canvas:
+  m_CorrespondingSourceObject: {fileID: 5601527288350443342, guid: ba26f0df5073dab4996f4a97f9595ac7, type: 3}
+  m_PrefabInstance: {fileID: 3854265004009302794}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4289186133852679580
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2062,6 +2016,74 @@ PrefabInstance:
       propertyPath: bossSpellRenderer
       value: 
       objectReference: {fileID: 666500262}
+    - target: {fileID: 6974851929114610332, guid: 8810d95615c725e47baee871bedb50ba, type: 3}
+      propertyPath: boss_Lvl_3_Prefab
+      value: 
+      objectReference: {fileID: 5163570132188328939, guid: 3457c12c99f827a47b47ebb63cd41edf, type: 3}
+    - target: {fileID: 6974851929114610332, guid: 8810d95615c725e47baee871bedb50ba, type: 3}
+      propertyPath: level_3_enemySprites.Array.size
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6974851929114610332, guid: 8810d95615c725e47baee871bedb50ba, type: 3}
+      propertyPath: level_3_enemySprites.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300000, guid: 7e051df6017950242b2cb744b441ac08, type: 3}
+    - target: {fileID: 6974851929114610332, guid: 8810d95615c725e47baee871bedb50ba, type: 3}
+      propertyPath: level_3_enemySprites.Array.data[1]
+      value: 
+      objectReference: {fileID: 21300000, guid: 5c2e99e45b096fd4a958a2defcb0ab35, type: 3}
+    - target: {fileID: 6974851929114610332, guid: 8810d95615c725e47baee871bedb50ba, type: 3}
+      propertyPath: level_3_enemySprites.Array.data[2]
+      value: 
+      objectReference: {fileID: 21300000, guid: cd57bd2bb435f2544a6f296fd536bb62, type: 3}
+    - target: {fileID: 6974851929114610332, guid: 8810d95615c725e47baee871bedb50ba, type: 3}
+      propertyPath: level_3_enemySprites.Array.data[3]
+      value: 
+      objectReference: {fileID: 21300000, guid: 0d61d1c369d2992439cc8a5b17247536, type: 3}
+    - target: {fileID: 6974851929114610332, guid: 8810d95615c725e47baee871bedb50ba, type: 3}
+      propertyPath: level_3_enemySprites.Array.data[4]
+      value: 
+      objectReference: {fileID: 21300000, guid: 03a18c31878418a43a7ec355de47ac4b, type: 3}
+    - target: {fileID: 6974851929114610332, guid: 8810d95615c725e47baee871bedb50ba, type: 3}
+      propertyPath: level_3_enemySprites.Array.data[5]
+      value: 
+      objectReference: {fileID: 21300000, guid: 4975e4729999c3c4f9a0bc520901aca3, type: 3}
+    - target: {fileID: 6974851929114610332, guid: 8810d95615c725e47baee871bedb50ba, type: 3}
+      propertyPath: level_3_enemySprites.Array.data[6]
+      value: 
+      objectReference: {fileID: 21300000, guid: 4f36184995e9a0f41ab37399e9aa8c77, type: 3}
+    - target: {fileID: 6974851929114610332, guid: 8810d95615c725e47baee871bedb50ba, type: 3}
+      propertyPath: lv3_bossSpellsBeingCast.Array.size
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6974851929114610332, guid: 8810d95615c725e47baee871bedb50ba, type: 3}
+      propertyPath: lv3_bossSpellsBeingCast.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300000, guid: 7e051df6017950242b2cb744b441ac08, type: 3}
+    - target: {fileID: 6974851929114610332, guid: 8810d95615c725e47baee871bedb50ba, type: 3}
+      propertyPath: lv3_bossSpellsBeingCast.Array.data[1]
+      value: 
+      objectReference: {fileID: 21300000, guid: 5c2e99e45b096fd4a958a2defcb0ab35, type: 3}
+    - target: {fileID: 6974851929114610332, guid: 8810d95615c725e47baee871bedb50ba, type: 3}
+      propertyPath: lv3_bossSpellsBeingCast.Array.data[2]
+      value: 
+      objectReference: {fileID: 21300000, guid: cd57bd2bb435f2544a6f296fd536bb62, type: 3}
+    - target: {fileID: 6974851929114610332, guid: 8810d95615c725e47baee871bedb50ba, type: 3}
+      propertyPath: lv3_bossSpellsBeingCast.Array.data[3]
+      value: 
+      objectReference: {fileID: 21300000, guid: 0d61d1c369d2992439cc8a5b17247536, type: 3}
+    - target: {fileID: 6974851929114610332, guid: 8810d95615c725e47baee871bedb50ba, type: 3}
+      propertyPath: lv3_bossSpellsBeingCast.Array.data[4]
+      value: 
+      objectReference: {fileID: 21300000, guid: 03a18c31878418a43a7ec355de47ac4b, type: 3}
+    - target: {fileID: 6974851929114610332, guid: 8810d95615c725e47baee871bedb50ba, type: 3}
+      propertyPath: lv3_bossSpellsBeingCast.Array.data[5]
+      value: 
+      objectReference: {fileID: 21300000, guid: 4975e4729999c3c4f9a0bc520901aca3, type: 3}
+    - target: {fileID: 6974851929114610332, guid: 8810d95615c725e47baee871bedb50ba, type: 3}
+      propertyPath: lv3_bossSpellsBeingCast.Array.data[6]
+      value: 
+      objectReference: {fileID: 21300000, guid: 4f36184995e9a0f41ab37399e9aa8c77, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2081,7 +2103,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3891429154822653822, guid: dfd70de8ee8a04a4cb54949be4fef8d3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 14.49
+      value: 16.18
       objectReference: {fileID: 0}
     - target: {fileID: 3891429154822653822, guid: dfd70de8ee8a04a4cb54949be4fef8d3, type: 3}
       propertyPath: m_LocalPosition.y

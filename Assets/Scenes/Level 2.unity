@@ -1645,6 +1645,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3649078311136231104, guid: ba26f0df5073dab4996f4a97f9595ac7, type: 3}
+      propertyPath: timer
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 3649078311136231104, guid: ba26f0df5073dab4996f4a97f9595ac7, type: 3}
       propertyPath: scoreText
       value: 
       objectReference: {fileID: 483946255}
@@ -1681,7 +1685,8 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 519420031}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 2172023233050341976, guid: ba26f0df5073dab4996f4a97f9595ac7, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ba26f0df5073dab4996f4a97f9595ac7, type: 3}

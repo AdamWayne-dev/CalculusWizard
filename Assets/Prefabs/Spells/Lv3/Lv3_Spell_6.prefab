@@ -15,8 +15,8 @@ GameObject:
   - component: {fileID: 985324337626344235}
   - component: {fileID: 5295341668577111347}
   m_Layer: 0
-  m_Name: Lv2_Spell_3
-  m_TagString: Lv2_Enemy_3
+  m_Name: Lv3_Spell_6
+  m_TagString: Lv2_Enemy_6
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -77,7 +77,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 6
-  m_Sprite: {fileID: 21300000, guid: 5786240eb0a12114d9e79835c7f1f3d3, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8af86948aa3155840b72642c30a37ed9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

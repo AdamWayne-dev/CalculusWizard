@@ -236,9 +236,16 @@ MonoBehaviour:
   - {fileID: 21300000, guid: ec08443dc98be8a4bb212f4df849a919, type: 3}
   - {fileID: 21300000, guid: 8af86948aa3155840b72642c30a37ed9, type: 3}
   - {fileID: 21300000, guid: fca5768ae45e6174a9d0d02889805027, type: 3}
-  lv2_temp_spellpool: []
   lv3_Spells: []
-  lv3_poolOfSpells: []
+  lv3_poolOfSpells:
+  - {fileID: 21300000, guid: fd134d30879b65e4f9dccd74259667b4, type: 3}
+  - {fileID: 21300000, guid: b1d192acd0d74b0489cafb67ffa6867c, type: 3}
+  - {fileID: 21300000, guid: 5786240eb0a12114d9e79835c7f1f3d3, type: 3}
+  - {fileID: 21300000, guid: 0c3df90c1bd88f84a8f8ccd875247e25, type: 3}
+  - {fileID: 21300000, guid: ec08443dc98be8a4bb212f4df849a919, type: 3}
+  - {fileID: 21300000, guid: 8af86948aa3155840b72642c30a37ed9, type: 3}
+  - {fileID: 21300000, guid: fca5768ae45e6174a9d0d02889805027, type: 3}
+  spellIndexList: 
 --- !u!82 &5928108375047064770
 AudioSource:
   m_ObjectHideFlags: 0

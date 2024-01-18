@@ -18,6 +18,7 @@ public class CollideWithEnemy : MonoBehaviour
 
     private bool[] spellsCollected;
     public bool[] lv2_spellsCollected;
+    public bool[] lv3_spellsCollected;
 
     private bool bossIsCastingSpell_0;
     private bool bossIsCastingSpell_1;
@@ -33,6 +34,7 @@ public class CollideWithEnemy : MonoBehaviour
     {         
         spellsCollected = new bool[4];
         lv2_spellsCollected = new bool[7];
+        lv3_spellsCollected= new bool[7];
         levelManager = FindObjectOfType<LevelManager>();
         populate = FindObjectOfType<PopulatePages>();
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -46,6 +48,10 @@ public class CollideWithEnemy : MonoBehaviour
         if (SceneManager.GetActiveScene().buildIndex == 2)
         { 
             Populate_Lv2_Spells();
+        }
+        if (SceneManager.GetActiveScene().buildIndex == 3) 
+        {
+            Populate_Lv3_Spells();
         }
         CheckCastingStatus();
     }
@@ -70,6 +76,18 @@ public class CollideWithEnemy : MonoBehaviour
         lv2_spellsCollected[6] = populate.Get_Lv2_SpellsCollected(6);
 
     }
+
+    private void Populate_Lv3_Spells()
+    {
+        lv3_spellsCollected[0] = populate.Get_Lv3_SpellsCollected(0);
+        lv3_spellsCollected[0] = populate.Get_Lv3_SpellsCollected(1);
+        lv3_spellsCollected[0] = populate.Get_Lv3_SpellsCollected(2);
+        lv3_spellsCollected[0] = populate.Get_Lv3_SpellsCollected(3);
+        lv3_spellsCollected[0] = populate.Get_Lv3_SpellsCollected(4);
+        lv3_spellsCollected[0] = populate.Get_Lv3_SpellsCollected(5);
+        lv3_spellsCollected[0] = populate.Get_Lv3_SpellsCollected(6);
+    }
+
 
     private void OnTriggerEnter2D(Collider2D collision) /* Checks to see what level it is and then what "type" an enemy is and depending on which spell is selected, will either
                                                            Destroy the enemy;
@@ -405,6 +423,216 @@ public class CollideWithEnemy : MonoBehaviour
                         {
 
                             levelManager.SetScore(-10);
+                            fireSpells.SetSpellExists(false);
+                            spriteRenderer.enabled = false;
+                            StartCoroutine(SpellBoofDelay());
+                        }
+                        break;
+                }
+                break;
+            case 3:
+                switch (spellIndex)
+                {
+                    case 0:
+                        if (collision.tag == gameObject.tag)
+                        {
+                            if (!lv3_spellsCollected[0])
+                            {
+                                populate.SetSpellsCollected(0, true);
+                            }
+                            fireSpells.SetSpellExists(false);
+                            spawnWaves.SetHasSpawned(false);
+                            levelManager.SetScore(45);
+                            Destroy(collision.gameObject);
+                            spriteRenderer.enabled = false;
+                            StartCoroutine(SpellBoofDelay());
+                        }
+
+                        else if (collision.tag == "Boss_Level_3")
+                        {
+                            Boss_Level_2_Check_Spell_0();
+                        }
+
+                        else
+                        {
+
+                            levelManager.SetScore(-20);
+                            fireSpells.SetSpellExists(false);
+                            spriteRenderer.enabled = false;
+                            StartCoroutine(SpellBoofDelay());
+                        }
+                        break;
+                    case 1:
+                        if (collision.tag == gameObject.tag)
+                        {
+                            if (!lv3_spellsCollected[1])
+                            {
+                                populate.SetSpellsCollected(1, true);
+                            }
+                            fireSpells.SetSpellExists(false);
+                            spawnWaves.SetHasSpawned(false);
+                            levelManager.SetScore(45);
+                            Destroy(collision.gameObject);
+                            spriteRenderer.enabled = false;
+                            StartCoroutine(SpellBoofDelay());
+                        }
+
+                        else if (collision.tag == "Boss_Level_3")
+                        {
+                            Boss_Level_2_Check_Spell_1();
+                        }
+
+                        else
+                        {
+
+                            levelManager.SetScore(-20);
+                            fireSpells.SetSpellExists(false);
+                            spriteRenderer.enabled = false;
+                            StartCoroutine(SpellBoofDelay());
+                        }
+                        break;
+                    case 2:
+                        if (collision.tag == gameObject.tag)
+                        {
+                            if (!lv3_spellsCollected[2])
+                            {
+                                populate.SetSpellsCollected(2, true);
+                            }
+                            fireSpells.SetSpellExists(false);
+                            spawnWaves.SetHasSpawned(false);
+                            levelManager.SetScore(45);
+                            Destroy(collision.gameObject);
+                            spriteRenderer.enabled = false;
+                            StartCoroutine(SpellBoofDelay());
+                        }
+
+                        else if (collision.tag == "Boss_Level_3")
+                        {
+                            Boss_Level_2_Check_Spell_2();
+                        }
+
+                        else
+                        {
+
+                            levelManager.SetScore(-20);
+                            fireSpells.SetSpellExists(false);
+                            spriteRenderer.enabled = false;
+                            StartCoroutine(SpellBoofDelay());
+                        }
+                        break;
+                    case 3:
+                        if (collision.tag == gameObject.tag)
+                        {
+                            if (!lv3_spellsCollected[3])
+                            {
+                                populate.SetSpellsCollected(3, true);
+                            }
+                            fireSpells.SetSpellExists(false);
+                            spawnWaves.SetHasSpawned(false);
+                            levelManager.SetScore(45);
+                            Destroy(collision.gameObject);
+                            spriteRenderer.enabled = false;
+                            StartCoroutine(SpellBoofDelay());
+                        }
+
+                        else if (collision.tag == "Boss_Level_3")
+                        {
+                            Boss_Level_2_Check_Spell_3();
+                        }
+
+                        else
+                        {
+
+                            levelManager.SetScore(-20);
+                            fireSpells.SetSpellExists(false);
+                            spriteRenderer.enabled = false;
+                            StartCoroutine(SpellBoofDelay());
+                        }
+                        break;
+                    case 4:
+                        if (collision.tag == gameObject.tag)
+                        {
+                            if (!lv3_spellsCollected[4])
+                            {
+                                populate.SetSpellsCollected(4, true);
+                            }
+                            fireSpells.SetSpellExists(false);
+                            spawnWaves.SetHasSpawned(false);
+                            levelManager.SetScore(45);
+                            Destroy(collision.gameObject);
+                            spriteRenderer.enabled = false;
+                            StartCoroutine(SpellBoofDelay());
+                        }
+
+                        else if (collision.tag == "Boss_Level_3")
+                        {
+                            Boss_Level_2_Check_Spell_4();
+                        }
+
+                        else
+                        {
+
+                            levelManager.SetScore(-20);
+                            fireSpells.SetSpellExists(false);
+                            spriteRenderer.enabled = false;
+                            StartCoroutine(SpellBoofDelay());
+                        }
+                        break;
+
+                    case 5:
+                        if (collision.tag == gameObject.tag)
+                        {
+                            if (!lv3_spellsCollected[5])
+                            {
+                                populate.SetSpellsCollected(5, true);
+                            }
+                            fireSpells.SetSpellExists(false);
+                            spawnWaves.SetHasSpawned(false);
+                            levelManager.SetScore(45);
+                            Destroy(collision.gameObject);
+                            spriteRenderer.enabled = false;
+                            StartCoroutine(SpellBoofDelay());
+                        }
+
+                        else if (collision.tag == "Boss_Level_3")
+                        {
+                            Boss_Level_2_Check_Spell_5();
+                        }
+
+                        else
+                        {
+
+                            levelManager.SetScore(-20);
+                            fireSpells.SetSpellExists(false);
+                            spriteRenderer.enabled = false;
+                            StartCoroutine(SpellBoofDelay());
+                        }
+                        break;
+
+                    case 6:
+                        if (collision.tag == gameObject.tag)
+                        {
+                            if (!lv3_spellsCollected[6])
+                            {
+                                populate.SetSpellsCollected(6, true);
+                            }
+                            fireSpells.SetSpellExists(false);
+                            spawnWaves.SetHasSpawned(false);
+                            levelManager.SetScore(45);
+                            Destroy(collision.gameObject);
+                            spriteRenderer.enabled = false;
+                            StartCoroutine(SpellBoofDelay());
+                        }
+
+                        else if (collision.tag == "Boss_Level_3")
+                        {
+                            Boss_Level_2_Check_Spell_6();
+                        }
+
+                        else
+                        {
+
+                            levelManager.SetScore(-20);
                             fireSpells.SetSpellExists(false);
                             spriteRenderer.enabled = false;
                             StartCoroutine(SpellBoofDelay());

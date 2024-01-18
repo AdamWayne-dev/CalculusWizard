@@ -8,6 +8,7 @@ public class CycleSpells : MonoBehaviour
     FireSpells fireSpells;
     [SerializeField] GameObject[] spellPrefabs;
     [SerializeField] GameObject[] lvl_2_SpellPrefabs;
+    [SerializeField] GameObject[] lvl_3_SpellPrefabs;
     private GameObject currentSpell;
     private int spellIndex = 0;
     private bool doesSpellExist;
@@ -75,6 +76,26 @@ public class CycleSpells : MonoBehaviour
                     }
                 }
                 break;
+
+            case 3:
+                if ((Input.GetKeyDown(KeyCode.E) || Input.GetAxisRaw("Mouse ScrollWheel") > 0f) && !doesSpellExist)
+                {
+                    spellIndex++;
+                    if (spellIndex == lvl_3_SpellPrefabs.Length)
+                    {
+                        spellIndex = 0;
+                    }
+                }
+
+                if ((Input.GetKeyDown(KeyCode.Q) || Input.GetAxisRaw("Mouse ScrollWheel") < 0f) && !doesSpellExist)
+                {
+                    spellIndex--;
+                    if (spellIndex < 0)
+                    {
+                        spellIndex = lvl_3_SpellPrefabs.Length - 1;
+                    }
+                }
+                break;
         }
     }
 
@@ -83,13 +104,16 @@ public class CycleSpells : MonoBehaviour
         switch (SceneManager.GetActiveScene().buildIndex)
         {
             case 1:
-            currentSpell = spellPrefabs[spellIndex];
+                currentSpell = spellPrefabs[spellIndex];
                 break;
 
             case 2:
-            currentSpell = lvl_2_SpellPrefabs[spellIndex];
+                currentSpell = lvl_2_SpellPrefabs[spellIndex];
                 break;
 
+            case 3:
+                currentSpell = lvl_3_SpellPrefabs[spellIndex];
+                break;
         }
     }
 

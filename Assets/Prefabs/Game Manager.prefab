@@ -53,7 +53,7 @@ MonoBehaviour:
   scoreText: {fileID: 0}
   gameOverTotalScore: {fileID: 6140206587667435500}
   TotalScoreText: {fileID: 3778617142077528774}
-  timer: 5
+  timer: 60
 --- !u!1 &610930933968278798
 GameObject:
   m_ObjectHideFlags: 0
@@ -283,7 +283,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &8395361963908537367
 RectTransform:
   m_ObjectHideFlags: 0
@@ -920,7 +920,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &4388185849735239653
 RectTransform:
   m_ObjectHideFlags: 0

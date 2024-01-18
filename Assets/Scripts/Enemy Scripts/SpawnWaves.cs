@@ -12,9 +12,11 @@ public class SpawnWaves : MonoBehaviour
 
     private SpriteRenderer sr;
     [SerializeField] Sprite[] level_2_enemySprites;
+    [SerializeField] Sprite[] level_3_enemySprites;  
 
     [SerializeField] GameObject boss_Lvl_1_Prefab;
     [SerializeField] GameObject boss_Lvl_2_Prefab;
+    [SerializeField] GameObject boss_Lvl_3_Prefab;
     private GameObject boss;
     [SerializeField] Transform bossSpawnLocation;
     [SerializeField] Transform bossMoveTo;
@@ -24,6 +26,7 @@ public class SpawnWaves : MonoBehaviour
 
     [SerializeField] Sprite[] bossSpellsBeingCast;
     [SerializeField] Sprite[] lv2_bossSpellsBeingCast;
+    [SerializeField] Sprite[] lv3_bossSpellsBeingCast;
     [SerializeField] SpriteRenderer bossSpellRenderer;
     private Sprite currentSpell;
     private bool isCastingSpell_1;
@@ -88,6 +91,14 @@ public class SpawnWaves : MonoBehaviour
                 Transform enemyLocation = ChooseRandomSpawnLocation();
                 GameObject spawnedEnemy = Instantiate(enemy, enemyLocation);            
             }
+
+            if (SceneManager.GetActiveScene().buildIndex == 3)
+            {
+                hasSpawned = true;
+                GameObject enemy = Level_3_ChooseRandomEnemy();
+                Transform enemyLocation = ChooseRandomSpawnLocation();
+                GameObject spawnedEnemy = Instantiate(enemy, enemyLocation);
+            }
         }
     }
 
@@ -110,6 +121,16 @@ public class SpawnWaves : MonoBehaviour
         sr.sprite = level_2_enemySprites[randNumber];
         return enemy;
     }
+
+    private GameObject Level_3_ChooseRandomEnemy()
+    {
+        int randNumber = Random.Range(0, level_3_Enemies.Length);
+        GameObject enemy = level_3_Enemies[randNumber];
+        sr = enemy.GetComponent<SpriteRenderer>();
+        sr.sprite = level_3_enemySprites[randNumber];
+        return enemy;
+    }
+
     public void SetHasSpawned(bool value) // Metgod to allow the ability to set the enemy spawn value in other scripts.
     {
         hasSpawned = value;
@@ -192,6 +213,44 @@ public class SpawnWaves : MonoBehaviour
                     {
                         bossSpawn = false;
                         levelManager.SetScore(50);
+                        Destroy(boss);
+                        StartCoroutine(EndLevel());
+                    }
+                    break;
+
+                case 3:
+                    if (timerFinished && !bossSpawn && !isLevelComplete)
+                    {
+                        bossSpawn = true;
+                        bossHealth = 5;
+                        boss = Instantiate(boss_Lvl_3_Prefab, bossSpawnLocation);
+                        shieldFollowBoss.SetShieldSprite(bossShieldSprites[0]);
+                    }
+
+                    if (bossHealth == 4)
+                    {
+                        shieldFollowBoss.SetShieldSprite(bossShieldSprites[1]);
+                    }
+
+                    if (bossHealth == 3)
+                    {
+                        shieldFollowBoss.SetShieldSprite(bossShieldSprites[2]);
+                    }
+
+                    if (bossHealth == 2)
+                    {
+                        shieldFollowBoss.SetShieldSprite(bossShieldSprites[3]);
+                    }
+
+                    if (bossHealth == 1)
+                    {
+                        shieldFollowBoss.SetShieldSprite(bossShieldSprites[4]);
+                    }
+
+                    if (bossHealth == 0 && bossSpawn)
+                    {
+                        bossSpawn = false;
+                        levelManager.SetScore(100);
                         Destroy(boss);
                         StartCoroutine(EndLevel());
                     }
@@ -431,6 +490,106 @@ public class SpawnWaves : MonoBehaviour
                     isCurrentlyCasting = true;
                 }
                 break;
+
+            case 3:
+                if (randomNumber == 0 && !isCurrentlyCasting)
+                {
+                    currentSpell = lv3_bossSpellsBeingCast[0];
+                    bossSpellRenderer.sprite = currentSpell;
+                    isCastingSpell_1 = true;
+                    isCastingSpell_2 = false;
+                    isCastingSpell_3 = false;
+                    isCastingSpell_4 = false;
+                    isCastingSpell_5 = false;
+                    isCastingSpell_6 = false;
+                    isCastingSpell_7 = false;
+                    isCurrentlyCasting = true;
+                }
+
+                else if (randomNumber == 1 && !isCurrentlyCasting)
+                {
+                    currentSpell = lv3_bossSpellsBeingCast[1];
+                    bossSpellRenderer.sprite = currentSpell;
+                    isCastingSpell_1 = false;
+                    isCastingSpell_2 = true;
+                    isCastingSpell_3 = false;
+                    isCastingSpell_4 = false;
+                    isCastingSpell_5 = false;
+                    isCastingSpell_6 = false;
+                    isCastingSpell_7 = false;
+                    isCurrentlyCasting = true;
+                }
+
+                else if (randomNumber == 2 && !isCurrentlyCasting)
+                {
+                    currentSpell = lv3_bossSpellsBeingCast[2];
+                    bossSpellRenderer.sprite = currentSpell;
+                    isCastingSpell_1 = false;
+                    isCastingSpell_2 = false;
+                    isCastingSpell_3 = true;
+                    isCastingSpell_4 = false;
+                    isCastingSpell_5 = false;
+                    isCastingSpell_6 = false;
+                    isCastingSpell_7 = false;
+                    isCurrentlyCasting = true;
+                }
+
+                else if (randomNumber == 3 && !isCurrentlyCasting)
+                {
+                    currentSpell = lv3_bossSpellsBeingCast[3];
+                    bossSpellRenderer.sprite = currentSpell;
+                    isCastingSpell_1 = false;
+                    isCastingSpell_2 = false;
+                    isCastingSpell_3 = false;
+                    isCastingSpell_4 = true;
+                    isCastingSpell_5 = false;
+                    isCastingSpell_6 = false;
+                    isCastingSpell_7 = false;
+                    isCurrentlyCasting = true;
+                }
+
+                else if (randomNumber == 4 && !isCurrentlyCasting)
+                {
+                    currentSpell = lv3_bossSpellsBeingCast[4];
+                    bossSpellRenderer.sprite = currentSpell;
+                    isCastingSpell_1 = false;
+                    isCastingSpell_2 = false;
+                    isCastingSpell_3 = false;
+                    isCastingSpell_4 = false;
+                    isCastingSpell_5 = true;
+                    isCastingSpell_6 = false;
+                    isCastingSpell_7 = false;
+                    isCurrentlyCasting = true;
+                }
+
+                else if (randomNumber == 5 && !isCurrentlyCasting)
+                {
+                    currentSpell = lv3_bossSpellsBeingCast[5];
+                    bossSpellRenderer.sprite = currentSpell;
+                    isCastingSpell_1 = false;
+                    isCastingSpell_2 = false;
+                    isCastingSpell_3 = false;
+                    isCastingSpell_4 = false;
+                    isCastingSpell_5 = false;
+                    isCastingSpell_6 = true;
+                    isCastingSpell_7 = false;
+                    isCurrentlyCasting = true;
+                }
+
+                else if (randomNumber == 6 && !isCurrentlyCasting)
+                {
+                    currentSpell = lv3_bossSpellsBeingCast[6];
+                    bossSpellRenderer.sprite = currentSpell;
+                    isCastingSpell_1 = false;
+                    isCastingSpell_2 = false;
+                    isCastingSpell_3 = false;
+                    isCastingSpell_4 = false;
+                    isCastingSpell_5 = false;
+                    isCastingSpell_6 = false;
+                    isCastingSpell_7 = true;
+                    isCurrentlyCasting = true;
+                }
+                break;
     }
     }
 
@@ -478,5 +637,20 @@ public class SpawnWaves : MonoBehaviour
         yield return new WaitForSeconds(0.3f);
         bossSpawn = false;
         levelManager.SetLevelComplete(true);
+    }
+
+    public Sprite[] GetSprites()
+    {
+        switch (SceneManager.GetActiveScene().buildIndex)
+        {
+            case 2:
+                return level_2_enemySprites;
+
+            case 3:
+                return level_3_enemySprites;
+
+            default:
+                return null;
+        }
     }
 }

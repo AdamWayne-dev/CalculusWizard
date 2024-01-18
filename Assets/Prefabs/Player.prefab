@@ -638,6 +638,14 @@ MonoBehaviour:
   - {fileID: 6701313431871972722, guid: 3c3b45272decff74cae75dd33f31524d, type: 3}
   - {fileID: 6701313431871972722, guid: 12d893e7d1a1cb0459e581ec7a44cbd6, type: 3}
   - {fileID: 6701313431871972722, guid: edc6e627b90167f4ca82fd3a5200b595, type: 3}
+  lvl_3_SpellPrefabs:
+  - {fileID: 6701313431871972722, guid: be1daa8af2c82b648b0f5e5732ce9bfe, type: 3}
+  - {fileID: 6701313431871972722, guid: 550a8426bf1f47c44966f7bd7fed5ae5, type: 3}
+  - {fileID: 6701313431871972722, guid: 974f3015723d6464780312af1a728f6d, type: 3}
+  - {fileID: 6701313431871972722, guid: 8056becf64abbd44dbfabd8235ff0b6c, type: 3}
+  - {fileID: 6701313431871972722, guid: 261b441b882ae014199d1f168d872519, type: 3}
+  - {fileID: 6701313431871972722, guid: db567cea88a2d234a8ba858aefb8baab, type: 3}
+  - {fileID: 6701313431871972722, guid: 04c650c4986c9004b9f404c71cc712ae, type: 3}
 --- !u!95 &9102703325097737716
 Animator:
   serializedVersion: 5

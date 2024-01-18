@@ -9,6 +9,7 @@ public class PopulatePages : MonoBehaviour
     CycleSpells cycleSpells;
     CollideWithEnemy collideWithEnemy;
     FireSpells fireSpells;
+    SpawnWaves spawnWaves;
 
     [SerializeField] SpriteRenderer leftPage;
     [SerializeField] SpriteRenderer rightPage;
@@ -18,28 +19,45 @@ public class PopulatePages : MonoBehaviour
     [SerializeField] Sprite[] lv3_Spells;
     [SerializeField] Sprite[] lv3_poolOfSpells;
 
+    private Sprite[] lv2_enemySprite;
+    private Sprite[] lv3_enemySprite;
+
     public int[] spellIndexList;
     private bool[] spellsCollected;
     private bool[] lv2_spellsCollected;
+    private bool[] lv3_spellsCollected; 
     private int spellIndex;
     private int lv2_spellIndex;
     private int lv3_spellIndex;
     private bool spellExists;
     private bool lv2_spellsPopulated;
-    private bool lv2_tempSpellsPopulated;
+    private bool lv3_spellsPopulated;
 
-    
+
+
     void Start()
     {
+        spawnWaves = FindObjectOfType<SpawnWaves>();
         lv2_spellsPopulated = false;
-        lv2_tempSpellsPopulated = false;
+        lv3_spellsPopulated = false;
         spellsCollected = new bool[4];
         lv2_spellsCollected = new bool[7];
         lv2_Spells = new Sprite[7];
+        lv3_spellsCollected = new bool[7];
+        lv3_Spells = new Sprite[7];
         collideWithEnemy = FindObjectOfType<CollideWithEnemy>();
         cycleSpells = FindObjectOfType<CycleSpells>();
         fireSpells = FindObjectOfType<FireSpells>();
         Populate_Lv2_Spells();
+        Populate_Lv3_Spells();
+        if (SceneManager.GetActiveScene().buildIndex == 2)
+        {
+            lv2_enemySprite = spawnWaves.GetSprites();
+        }
+        if (SceneManager.GetActiveScene().buildIndex == 3)
+        {
+            lv3_enemySprite = spawnWaves.GetSprites();
+        }
     }
 
     // Update is called once per frame
@@ -47,6 +65,7 @@ public class PopulatePages : MonoBehaviour
     {
         spellIndex = cycleSpells.GetSpellIndex();
         lv2_spellIndex = cycleSpells.GetSpellIndex();
+        lv3_spellIndex = cycleSpells.GetSpellIndex();
         spellExists = fireSpells.GetSpellExists();
         DisplayLeftPage();
         DisplayRightPage();
@@ -123,6 +142,46 @@ public class PopulatePages : MonoBehaviour
                         break;
                 }
                 break;
+            case 3:
+                switch (lv3_spellIndex)
+                {
+                    case 0:
+                        leftPage.sprite = lv3_poolOfSpells[spellIndex];
+
+                        break;
+
+                    case 1:
+                        leftPage.sprite = lv3_poolOfSpells[spellIndex];
+
+                        break;
+
+                    case 2:
+                        leftPage.sprite = lv3_poolOfSpells[spellIndex];
+
+                        break;
+
+                    case 3:
+                        leftPage.sprite = lv3_poolOfSpells[spellIndex];
+
+                        break;
+
+                    case 4:
+                        leftPage.sprite = lv3_poolOfSpells[spellIndex];
+                        break;
+
+                    case 5:
+                        leftPage.sprite = lv3_poolOfSpells[spellIndex];
+                        break;
+
+                    case 6:
+                        leftPage.sprite = lv3_poolOfSpells[spellIndex];
+                        break;
+
+                    case 7:
+                        leftPage.sprite = lv3_poolOfSpells[spellIndex];
+                        break;
+                }
+                break;
         }
     }
 
@@ -179,12 +238,12 @@ public class PopulatePages : MonoBehaviour
                 }
                 break;
             case 2:
-                switch (spellIndex)
+                switch (lv2_spellIndex)
                 {
                     case 0:
                         if (lv2_spellsCollected[0])
                         {
-                            rightPage.sprite = lv2_poolOfSpells[0];
+                            rightPage.sprite = lv2_enemySprite[0];
                         }
                         else
                         {
@@ -195,7 +254,7 @@ public class PopulatePages : MonoBehaviour
                     case 1:
                         if (lv2_spellsCollected[1])
                         {
-                            rightPage.sprite = lv2_poolOfSpells[1];
+                            rightPage.sprite = lv2_enemySprite[1];
                         }
                         else
                         {
@@ -206,7 +265,7 @@ public class PopulatePages : MonoBehaviour
                     case 2:
                         if (lv2_spellsCollected[2])
                         {
-                            rightPage.sprite = lv2_poolOfSpells[2];
+                            rightPage.sprite = lv2_enemySprite[2];
                         }
                         else
                         {
@@ -217,7 +276,7 @@ public class PopulatePages : MonoBehaviour
                     case 3:
                         if (lv2_spellsCollected[3])
                         {
-                            rightPage.sprite = lv2_poolOfSpells[3];
+                            rightPage.sprite = lv2_enemySprite[3];
                         }
                         else
                         {
@@ -228,7 +287,7 @@ public class PopulatePages : MonoBehaviour
                     case 4:
                         if (lv2_spellsCollected[4])
                         {
-                            rightPage.sprite = lv2_poolOfSpells[4];
+                            rightPage.sprite = lv2_enemySprite[4];
                         }
                         else
                         {
@@ -239,7 +298,7 @@ public class PopulatePages : MonoBehaviour
                     case 5:
                         if (lv2_spellsCollected[5])
                         {
-                            rightPage.sprite = lv2_poolOfSpells[5];
+                            rightPage.sprite = lv2_enemySprite[5];
                         }
                         else
                         {
@@ -250,7 +309,89 @@ public class PopulatePages : MonoBehaviour
                     case 6:
                         if (lv2_spellsCollected[6])
                         {
-                            rightPage.sprite = lv2_poolOfSpells[6];
+                            rightPage.sprite = lv2_enemySprite[6];
+                        }
+                        else
+                        {
+                            rightPage.sprite = null;
+                        }
+                        break;
+
+                }
+                break;
+            case 3:
+                switch (lv3_spellIndex)
+                {
+                    case 0:
+                        if (lv3_spellsCollected[0])
+                        {
+                            rightPage.sprite = lv3_enemySprite[0];
+                        }
+                        else
+                        {
+                            rightPage.sprite = null;
+                        }
+                        break;
+
+                    case 1:
+                        if (lv3_spellsCollected[1])
+                        {
+                            rightPage.sprite = lv3_enemySprite[1];
+                        }
+                        else
+                        {
+                            rightPage.sprite = null;
+                        }
+                        break;
+
+                    case 2:
+                        if (lv3_spellsCollected[2])
+                        {
+                            rightPage.sprite = lv3_enemySprite[2];
+                        }
+                        else
+                        {
+                            rightPage.sprite = null;
+                        }
+                        break;
+
+                    case 3:
+                        if (lv3_spellsCollected[3])
+                        {
+                            rightPage.sprite = lv3_enemySprite[3];
+                        }
+                        else
+                        {
+                            rightPage.sprite = null;
+                        }
+                        break;
+
+                    case 4:
+                        if (lv3_spellsCollected[4])
+                        {
+                            rightPage.sprite = lv3_enemySprite[4];
+                        }
+                        else
+                        {
+                            rightPage.sprite = null;
+                        }
+                        break;
+
+                    case 5:
+                        if (lv3_spellsCollected[5])
+                        {
+                            rightPage.sprite = lv3_enemySprite[5];
+                        }
+                        else
+                        {
+                            rightPage.sprite = null;
+                        }
+                        break;
+
+                    case 6:
+                        if (lv3_spellsCollected[6])
+                        {
+                            rightPage.sprite = lv3_enemySprite[6];
                         }
                         else
                         {
@@ -274,7 +415,13 @@ public class PopulatePages : MonoBehaviour
             case 2:
                 lv2_spellsCollected[value] = state;
                 break;
+
+            case 3:
+                lv3_spellsCollected[value] = state;
+                break;
         }
+
+            
     }
 
     public bool GetSpellsCollected(int value)
@@ -287,10 +434,14 @@ public class PopulatePages : MonoBehaviour
         return lv2_spellsCollected[value];
     }
 
+    public bool Get_Lv3_SpellsCollected(int value)
+    {
+        return lv3_spellsCollected[value];
+    }
     private void Populate_Lv2_Spells()
     {
         
-        if (!lv2_spellsPopulated && lv2_tempSpellsPopulated)
+        if (!lv2_spellsPopulated )
         {
             
             for (int i = 0; i < lv2_Spells.Length; i++)
@@ -301,4 +452,18 @@ public class PopulatePages : MonoBehaviour
             
         }
     } 
+
+    private void Populate_Lv3_Spells()
+    {
+        if (!lv3_spellsPopulated)
+        {
+
+            for (int i = 0; i < lv3_Spells.Length; i++)
+            {
+                lv3_Spells[i] = lv3_poolOfSpells[i];
+            }
+            lv3_spellsPopulated = true;
+
+        }
+    }
 }
