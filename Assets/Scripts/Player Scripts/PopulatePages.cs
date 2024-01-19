@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class PopulatePages : MonoBehaviour
 {
@@ -10,9 +11,23 @@ public class PopulatePages : MonoBehaviour
     CollideWithEnemy collideWithEnemy;
     FireSpells fireSpells;
     SpawnWaves spawnWaves;
+    GenerateEquations equations;
 
     [SerializeField] SpriteRenderer leftPage;
     [SerializeField] SpriteRenderer rightPage;
+    [SerializeField] TMP_Text leftPageText;
+    [SerializeField] TMP_Text rightPageText;
+
+    HashSet<string> lv2_LeftPage_Spells = new HashSet<string>();
+    HashSet<string> lv2_RightPage_Spells = new HashSet<string>();
+    [SerializeField] string[] lv2_leftpage_spellArray;
+    [SerializeField] string[] lv2_rightpage_spellArray;
+
+    HashSet<string> lv3_LeftPage_Spells = new HashSet<string>();
+    HashSet<string> lv3_RightPage_Spells = new HashSet<string>();
+    [SerializeField] string[] lv3_leftpage_spellArray;
+    [SerializeField] string[] lv3_rightpage_spellArray;
+
     [SerializeField] Sprite[] lv1_Spells;
     [SerializeField] Sprite[] lv2_Spells;
     [SerializeField] Sprite[] lv2_poolOfSpells;
@@ -37,6 +52,25 @@ public class PopulatePages : MonoBehaviour
 
     void Start()
     {
+        equations = FindObjectOfType<GenerateEquations>();
+        lv2_LeftPage_Spells = equations.Get_LeftHand_Diff_Equations();
+        lv2_RightPage_Spells = equations.Get_RightHand_Diff_Equations();
+
+        lv2_leftpage_spellArray = new string[lv2_LeftPage_Spells.Count];
+        lv2_LeftPage_Spells.CopyTo(lv2_leftpage_spellArray);
+
+        lv2_rightpage_spellArray = new string[lv2_RightPage_Spells.Count];
+        lv2_RightPage_Spells.CopyTo(lv2_rightpage_spellArray);
+
+        lv3_LeftPage_Spells = equations.Get_LeftHand_Int_Equations();
+        lv3_RightPage_Spells = equations.Get_RightHand_Int_Equations();
+
+        lv3_leftpage_spellArray = new string[lv3_LeftPage_Spells.Count];
+        lv3_LeftPage_Spells.CopyTo(lv3_leftpage_spellArray);
+
+        lv3_rightpage_spellArray = new string[lv3_RightPage_Spells.Count];
+        lv3_RightPage_Spells.CopyTo(lv3_rightpage_spellArray);
+
         spawnWaves = FindObjectOfType<SpawnWaves>();
         lv2_spellsPopulated = false;
         lv3_spellsPopulated = false;
@@ -106,80 +140,80 @@ public class PopulatePages : MonoBehaviour
                 switch (lv2_spellIndex)
                 {
                     case 0:
-                        leftPage.sprite = lv2_poolOfSpells[spellIndex];
-
+                        leftPageText.text =  lv2_leftpage_spellArray[lv2_spellIndex];
                         break;
 
                     case 1:
-                        leftPage.sprite = lv2_poolOfSpells[spellIndex];
-
+                        leftPageText.text = lv2_leftpage_spellArray[lv2_spellIndex];
                         break;
 
                     case 2:
-                        leftPage.sprite = lv2_poolOfSpells[spellIndex];
-
+                        leftPageText.text = lv2_leftpage_spellArray[lv2_spellIndex];
                         break;
 
                     case 3:
-                        leftPage.sprite = lv2_poolOfSpells[spellIndex];
-
+                        leftPageText.text = lv2_leftpage_spellArray[lv2_spellIndex];
                         break;
 
                     case 4:
-                        leftPage.sprite = lv2_poolOfSpells[spellIndex];
+                        leftPageText.text = lv2_leftpage_spellArray[lv2_spellIndex];
                         break;
 
                     case 5:
-                        leftPage.sprite= lv2_poolOfSpells[spellIndex];
+                        leftPageText.text = lv2_leftpage_spellArray[lv2_spellIndex];
                         break;
 
                     case 6:
-                        leftPage.sprite = lv2_poolOfSpells[spellIndex];
+                        leftPageText.text = lv2_leftpage_spellArray[lv2_spellIndex];
                         break;
-
-                    case 7:
-                        leftPage.sprite = lv2_poolOfSpells[spellIndex];
-                        break;
+                   
                 }
                 break;
             case 3:
                 switch (lv3_spellIndex)
                 {
                     case 0:
-                        leftPage.sprite = lv3_poolOfSpells[spellIndex];
+                        //leftPage.sprite = lv3_poolOfSpells[spellIndex];
+                        leftPageText.text = lv3_leftpage_spellArray[lv2_spellIndex];
 
                         break;
 
                     case 1:
-                        leftPage.sprite = lv3_poolOfSpells[spellIndex];
+                        //leftPage.sprite = lv3_poolOfSpells[spellIndex];
+                        leftPageText.text = lv3_leftpage_spellArray[lv2_spellIndex];
 
                         break;
 
                     case 2:
-                        leftPage.sprite = lv3_poolOfSpells[spellIndex];
+                        //leftPage.sprite = lv3_poolOfSpells[spellIndex];
+                        leftPageText.text = lv3_leftpage_spellArray[lv2_spellIndex];
 
                         break;
 
                     case 3:
-                        leftPage.sprite = lv3_poolOfSpells[spellIndex];
+                        //leftPage.sprite = lv3_poolOfSpells[spellIndex];
+                        leftPageText.text = lv3_leftpage_spellArray[lv2_spellIndex];
 
                         break;
 
                     case 4:
-                        leftPage.sprite = lv3_poolOfSpells[spellIndex];
+                       // leftPage.sprite = lv3_poolOfSpells[spellIndex];
+                        leftPageText.text = lv3_leftpage_spellArray[lv2_spellIndex];
+
                         break;
 
                     case 5:
-                        leftPage.sprite = lv3_poolOfSpells[spellIndex];
+                        //leftPage.sprite = lv3_poolOfSpells[spellIndex];
+                        leftPageText.text = lv3_leftpage_spellArray[lv2_spellIndex];
+
                         break;
 
                     case 6:
-                        leftPage.sprite = lv3_poolOfSpells[spellIndex];
-                        break;
+                        //leftPage.sprite = lv3_poolOfSpells[spellIndex];
+                        leftPageText.text = lv3_leftpage_spellArray[lv2_spellIndex];
 
-                    case 7:
-                        leftPage.sprite = lv3_poolOfSpells[spellIndex];
                         break;
+                    
                 }
                 break;
         }
@@ -243,77 +277,77 @@ public class PopulatePages : MonoBehaviour
                     case 0:
                         if (lv2_spellsCollected[0])
                         {
-                            rightPage.sprite = lv2_enemySprite[0];
+                            rightPageText.text = lv2_rightpage_spellArray[lv2_spellIndex];
                         }
                         else
                         {
-                            rightPage.sprite = null;
+                            rightPageText.text = "";
                         }
                         break;
 
                     case 1:
                         if (lv2_spellsCollected[1])
                         {
-                            rightPage.sprite = lv2_enemySprite[1];
+                            rightPageText.text = lv2_rightpage_spellArray[lv2_spellIndex];
                         }
                         else
                         {
-                            rightPage.sprite = null;
+                            rightPageText.text = "";
                         }
                         break;
 
                     case 2:
                         if (lv2_spellsCollected[2])
                         {
-                            rightPage.sprite = lv2_enemySprite[2];
+                            rightPageText.text = lv2_rightpage_spellArray[lv2_spellIndex];
                         }
                         else
                         {
-                            rightPage.sprite = null;
+                            rightPageText.text = "";
                         }
                         break;
 
                     case 3:
                         if (lv2_spellsCollected[3])
                         {
-                            rightPage.sprite = lv2_enemySprite[3];
+                            rightPageText.text = lv2_rightpage_spellArray[lv2_spellIndex];
                         }
                         else
                         {
-                            rightPage.sprite = null;
+                            rightPageText.text = "";
                         }
                         break;
 
                     case 4:
                         if (lv2_spellsCollected[4])
                         {
-                            rightPage.sprite = lv2_enemySprite[4];
+                            rightPageText.text = lv2_rightpage_spellArray[lv2_spellIndex];
                         }
                         else
                         {
-                            rightPage.sprite = null;
+                            rightPageText.text = "";
                         }
                         break;
 
                     case 5:
                         if (lv2_spellsCollected[5])
                         {
-                            rightPage.sprite = lv2_enemySprite[5];
+                            rightPageText.text = lv2_rightpage_spellArray[lv2_spellIndex];
                         }
                         else
                         {
-                            rightPage.sprite = null;
+                            rightPageText.text = "";
                         }
                         break;
 
                     case 6:
                         if (lv2_spellsCollected[6])
                         {
-                            rightPage.sprite = lv2_enemySprite[6];
+                            rightPageText.text = lv2_rightpage_spellArray[lv2_spellIndex];
                         }
                         else
                         {
-                            rightPage.sprite = null;
+                            rightPageText.text = "";
                         }
                         break;
 
@@ -325,77 +359,77 @@ public class PopulatePages : MonoBehaviour
                     case 0:
                         if (lv3_spellsCollected[0])
                         {
-                            rightPage.sprite = lv3_enemySprite[0];
+                            rightPageText.text = lv3_rightpage_spellArray[lv3_spellIndex];
                         }
                         else
                         {
-                            rightPage.sprite = null;
+                            rightPageText.text = "";
                         }
                         break;
 
                     case 1:
                         if (lv3_spellsCollected[1])
                         {
-                            rightPage.sprite = lv3_enemySprite[1];
+                            rightPageText.text = lv3_rightpage_spellArray[lv3_spellIndex];
                         }
                         else
                         {
-                            rightPage.sprite = null;
+                            rightPageText.text = "";
                         }
                         break;
 
                     case 2:
                         if (lv3_spellsCollected[2])
                         {
-                            rightPage.sprite = lv3_enemySprite[2];
+                            rightPageText.text = lv3_rightpage_spellArray[lv3_spellIndex];
                         }
                         else
                         {
-                            rightPage.sprite = null;
+                            rightPageText.text = "";
                         }
                         break;
 
                     case 3:
                         if (lv3_spellsCollected[3])
                         {
-                            rightPage.sprite = lv3_enemySprite[3];
+                            rightPageText.text = lv3_rightpage_spellArray[lv3_spellIndex];
                         }
                         else
                         {
-                            rightPage.sprite = null;
+                            rightPageText.text = "";
                         }
                         break;
 
                     case 4:
                         if (lv3_spellsCollected[4])
                         {
-                            rightPage.sprite = lv3_enemySprite[4];
+                            rightPageText.text = lv3_rightpage_spellArray[lv3_spellIndex];
                         }
                         else
                         {
-                            rightPage.sprite = null;
+                            rightPageText.text = "";
                         }
                         break;
 
                     case 5:
                         if (lv3_spellsCollected[5])
                         {
-                            rightPage.sprite = lv3_enemySprite[5];
+                            rightPageText.text = lv3_rightpage_spellArray[lv3_spellIndex];
                         }
                         else
                         {
-                            rightPage.sprite = null;
+                            rightPageText.text = "";
                         }
                         break;
 
                     case 6:
                         if (lv3_spellsCollected[6])
                         {
-                            rightPage.sprite = lv3_enemySprite[6];
+                            rightPageText.text = lv3_rightpage_spellArray[lv3_spellIndex];
                         }
                         else
                         {
-                            rightPage.sprite = null;
+                            rightPageText.text = "";
                         }
                         break;
 

@@ -9,6 +9,7 @@ public class TutorialManager : MonoBehaviour
     [SerializeField] Canvas tutorialPage1;
     [SerializeField] Canvas tutorialPage2;
     [SerializeField] Canvas tutorialPage3;
+    [SerializeField] Canvas creditsPage;
     [SerializeField] Canvas mainMenu;
     // Start is called before the first frame update
     void Start()
@@ -16,6 +17,7 @@ public class TutorialManager : MonoBehaviour
         tutorialPage1.enabled = false;
         tutorialPage2.enabled = false;
         tutorialPage3.enabled = false;
+        creditsPage.enabled = false;
     }
 
     // Update is called once per frame
@@ -47,5 +49,17 @@ public class TutorialManager : MonoBehaviour
         tutorialPage1.enabled = false;
         tutorialPage2.enabled = false;
         tutorialPage3.enabled = true;
+    }
+
+    public void CreditPage()
+    {
+        mainMenu.enabled = false;
+        creditsPage.enabled = true;
+    }
+
+    public void QuitCreditScreen()
+    {
+        creditsPage.enabled = false;
+        mainMenu.enabled = true;
     }
 }

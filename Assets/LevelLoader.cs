@@ -59,7 +59,7 @@ public class LevelLoader : MonoBehaviour
         {
 
             case 0:
-                
+                audioManager.PlayBackgroundMusic(0);
                 break;
 
             case 1:
@@ -71,6 +71,7 @@ public class LevelLoader : MonoBehaviour
                 break;
 
             case 3:
+                audioManager.PlayBackgroundMusic(0);
                 break;
         }
 

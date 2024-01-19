@@ -1762,6 +1762,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tome_Open
       objectReference: {fileID: 0}
+    - target: {fileID: 6415355664828787338, guid: 75da198bc6525354ebe726652999ff29, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 519420031}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
