@@ -182,22 +182,30 @@ MonoBehaviour:
   - {fileID: 647468542501600910, guid: 11fefc02ea876ec40b0b465a34a75737, type: 3}
   - {fileID: 647468542501600910, guid: 160807e0b27a6df40b68491303c3c5b6, type: 3}
   level_2_Enemies:
-  - {fileID: 242857751792302432, guid: ba140aa3e16a1fe49b803f1f0819cf5d, type: 3}
-  - {fileID: 3085750189783236356, guid: d776f580a4985124b82659afe64b6711, type: 3}
-  - {fileID: 1947304786226597406, guid: 8015a1b6135f7214789ff72870312f36, type: 3}
-  - {fileID: 1947304786226597406, guid: 71510e1c2cedddc4cb47e3c5654eb4e6, type: 3}
-  - {fileID: 1947304786226597406, guid: 7f76a26a9da0d9041972496e36c3b62d, type: 3}
-  - {fileID: 1947304786226597406, guid: cb0d60a1b2bfc9647973a2e01c658c85, type: 3}
-  - {fileID: 1947304786226597406, guid: 0f4cbb29e0e58834c83ce8e8c4967cde, type: 3}
+  - {fileID: 8883700786560869187, guid: 7907c898ea40c69408830d1032b7ee50, type: 3}
+  - {fileID: 8883700786560869187, guid: 433b3279187eae445a2a0cce62e15bd3, type: 3}
+  - {fileID: 8883700786560869187, guid: 1182319bc66d8c24ba3aa2812f8c3c22, type: 3}
+  - {fileID: 8883700786560869187, guid: d67424a429c5e7c44a2e73791011c88d, type: 3}
+  - {fileID: 8883700786560869187, guid: d9ac68f0c5f91ce4da6a5105fbab59aa, type: 3}
+  - {fileID: 8883700786560869187, guid: 5df4216f6f1f9ba48b7fe259f24e4b0e, type: 3}
+  - {fileID: 8883700786560869187, guid: 18d9b8b10ec1fea40810120c0472e674, type: 3}
   level_3_Enemies:
-  - {fileID: 242857751792302432, guid: ba140aa3e16a1fe49b803f1f0819cf5d, type: 3}
-  - {fileID: 3085750189783236356, guid: d776f580a4985124b82659afe64b6711, type: 3}
-  - {fileID: 1947304786226597406, guid: 8015a1b6135f7214789ff72870312f36, type: 3}
-  - {fileID: 1947304786226597406, guid: 71510e1c2cedddc4cb47e3c5654eb4e6, type: 3}
-  - {fileID: 1947304786226597406, guid: 7f76a26a9da0d9041972496e36c3b62d, type: 3}
-  - {fileID: 1947304786226597406, guid: cb0d60a1b2bfc9647973a2e01c658c85, type: 3}
-  - {fileID: 1947304786226597406, guid: 0f4cbb29e0e58834c83ce8e8c4967cde, type: 3}
+  - {fileID: 8883700786560869187, guid: 7907c898ea40c69408830d1032b7ee50, type: 3}
+  - {fileID: 8883700786560869187, guid: 433b3279187eae445a2a0cce62e15bd3, type: 3}
+  - {fileID: 8883700786560869187, guid: 1182319bc66d8c24ba3aa2812f8c3c22, type: 3}
+  - {fileID: 8883700786560869187, guid: d67424a429c5e7c44a2e73791011c88d, type: 3}
+  - {fileID: 8883700786560869187, guid: d9ac68f0c5f91ce4da6a5105fbab59aa, type: 3}
+  - {fileID: 8883700786560869187, guid: 5df4216f6f1f9ba48b7fe259f24e4b0e, type: 3}
+  - {fileID: 8883700786560869187, guid: 18d9b8b10ec1fea40810120c0472e674, type: 3}
   level_2_enemySprites:
+  - {fileID: 21300000, guid: 7e051df6017950242b2cb744b441ac08, type: 3}
+  - {fileID: 21300000, guid: 5c2e99e45b096fd4a958a2defcb0ab35, type: 3}
+  - {fileID: 21300000, guid: cd57bd2bb435f2544a6f296fd536bb62, type: 3}
+  - {fileID: 21300000, guid: 0d61d1c369d2992439cc8a5b17247536, type: 3}
+  - {fileID: 21300000, guid: 03a18c31878418a43a7ec355de47ac4b, type: 3}
+  - {fileID: 21300000, guid: 4975e4729999c3c4f9a0bc520901aca3, type: 3}
+  - {fileID: 21300000, guid: 4f36184995e9a0f41ab37399e9aa8c77, type: 3}
+  level_3_enemySprites:
   - {fileID: 21300000, guid: 7e051df6017950242b2cb744b441ac08, type: 3}
   - {fileID: 21300000, guid: 5c2e99e45b096fd4a958a2defcb0ab35, type: 3}
   - {fileID: 21300000, guid: cd57bd2bb435f2544a6f296fd536bb62, type: 3}
@@ -207,6 +215,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 4f36184995e9a0f41ab37399e9aa8c77, type: 3}
   boss_Lvl_1_Prefab: {fileID: 5163570132188328939, guid: 0010f1e4789719647919c614dd6aeb7d, type: 3}
   boss_Lvl_2_Prefab: {fileID: 5163570132188328939, guid: 32abe64a77582da4ea8f252aabdc9d06, type: 3}
+  boss_Lvl_3_Prefab: {fileID: 5163570132188328939, guid: 3457c12c99f827a47b47ebb63cd41edf, type: 3}
   bossSpawnLocation: {fileID: 5462831189177489566}
   bossMoveTo: {fileID: 2783895987432178500}
   bossUpperBoundary: {fileID: 7890955502924825303}
@@ -230,7 +239,16 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 03a18c31878418a43a7ec355de47ac4b, type: 3}
   - {fileID: 21300000, guid: 4975e4729999c3c4f9a0bc520901aca3, type: 3}
   - {fileID: 21300000, guid: 4f36184995e9a0f41ab37399e9aa8c77, type: 3}
+  lv3_bossSpellsBeingCast:
+  - {fileID: 21300000, guid: 7e051df6017950242b2cb744b441ac08, type: 3}
+  - {fileID: 21300000, guid: 5c2e99e45b096fd4a958a2defcb0ab35, type: 3}
+  - {fileID: 21300000, guid: cd57bd2bb435f2544a6f296fd536bb62, type: 3}
+  - {fileID: 21300000, guid: 0d61d1c369d2992439cc8a5b17247536, type: 3}
+  - {fileID: 21300000, guid: 03a18c31878418a43a7ec355de47ac4b, type: 3}
+  - {fileID: 21300000, guid: 4975e4729999c3c4f9a0bc520901aca3, type: 3}
+  - {fileID: 21300000, guid: 4f36184995e9a0f41ab37399e9aa8c77, type: 3}
   bossSpellRenderer: {fileID: 0}
+  BossSpellPage: {fileID: 8883700786560869187, guid: 9d1befa17d02aee4b85b3cb05e860814, type: 3}
   shieldFollowBoss: {fileID: 0}
   levelManager: {fileID: 0}
   bossSpeed: 2

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class SpawnWaves : MonoBehaviour
 {
@@ -28,6 +29,12 @@ public class SpawnWaves : MonoBehaviour
     [SerializeField] Sprite[] lv2_bossSpellsBeingCast;
     [SerializeField] Sprite[] lv3_bossSpellsBeingCast;
     [SerializeField] SpriteRenderer bossSpellRenderer;
+
+    PopulatePages pp;
+    TMP_Text pageText;
+    private string[] lv2_enemySpellsList;
+    private string[] lv3_enemySpellsList;
+
     private Sprite currentSpell;
     private bool isCastingSpell_1;
     private bool isCastingSpell_2;
@@ -38,6 +45,8 @@ public class SpawnWaves : MonoBehaviour
     private bool isCastingSpell_7;
     private bool isCurrentlyCasting;
 
+    [SerializeField] GameObject BossSpellPage;
+    [SerializeField] TMP_Text bossSpellText;
     [SerializeField] ShieldFollowBoss shieldFollowBoss;
     private bool hasReachedUpper;
     private bool hasReachedLower;
@@ -58,7 +67,12 @@ public class SpawnWaves : MonoBehaviour
 
     private void Start()
     {   
+        BossSpellPage.SetActive(false);
+        lv2_enemySpellsList = new string[7];
+        lv3_enemySpellsList = new string[7];
         atFirstBossPosition = false;
+        pp = FindObjectOfType<PopulatePages>();
+        
     }
     void Update()
     {
@@ -117,8 +131,10 @@ public class SpawnWaves : MonoBehaviour
     {
         int randNumber = Random.Range(0, level_2_Enemies.Length);
         GameObject enemy = level_2_Enemies[randNumber];
-        sr = enemy.GetComponent<SpriteRenderer>();
-        sr.sprite = level_2_enemySprites[randNumber];
+        lv2_enemySpellsList = pp.GetLevel2RightPageSpellArray();
+        pageText = enemy.GetComponentInChildren<TMP_Text>();
+        pageText.text = lv2_enemySpellsList[randNumber];
+        
         return enemy;
     }
 
@@ -126,8 +142,10 @@ public class SpawnWaves : MonoBehaviour
     {
         int randNumber = Random.Range(0, level_3_Enemies.Length);
         GameObject enemy = level_3_Enemies[randNumber];
-        sr = enemy.GetComponent<SpriteRenderer>();
-        sr.sprite = level_3_enemySprites[randNumber];
+        lv3_enemySpellsList = pp.GetLevel3RightPageSpellArray();
+        pageText = enemy.GetComponentInChildren<TMP_Text>();
+        pageText.text = lv3_enemySpellsList[randNumber];
+
         return enemy;
     }
 
@@ -331,6 +349,7 @@ public class SpawnWaves : MonoBehaviour
     {
 
         int randomNumber = Random.Range(0, 7);
+
         switch (SceneManager.GetActiveScene().buildIndex)
         {
             case 1:
@@ -392,10 +411,12 @@ public class SpawnWaves : MonoBehaviour
                 break;
 
             case 2:
+                BossSpellPage.SetActive(true);
                 if (randomNumber == 0 && !isCurrentlyCasting)
                 {
-                    currentSpell = lv2_bossSpellsBeingCast[0];
-                    bossSpellRenderer.sprite = currentSpell;
+                    
+                    bossSpellText.text = lv2_enemySpellsList[0];
+                    bossSpellRenderer.sprite = null;
                     isCastingSpell_1 = true;
                     isCastingSpell_2 = false;
                     isCastingSpell_3 = false;
@@ -408,8 +429,9 @@ public class SpawnWaves : MonoBehaviour
 
                 else if (randomNumber == 1 && !isCurrentlyCasting)
                 {
-                    currentSpell = lv2_bossSpellsBeingCast[1];
-                    bossSpellRenderer.sprite = currentSpell;
+                   
+                    bossSpellText.text = lv2_enemySpellsList[1];
+                    bossSpellRenderer.sprite = null;
                     isCastingSpell_1 = false;
                     isCastingSpell_2 = true;
                     isCastingSpell_3 = false;
@@ -422,8 +444,9 @@ public class SpawnWaves : MonoBehaviour
 
                 else if (randomNumber == 2 && !isCurrentlyCasting)
                 {
-                    currentSpell = lv2_bossSpellsBeingCast[2];
-                    bossSpellRenderer.sprite = currentSpell;
+                    
+                    bossSpellText.text = lv2_enemySpellsList[2];
+                    bossSpellRenderer.sprite = null;
                     isCastingSpell_1 = false;
                     isCastingSpell_2 = false;
                     isCastingSpell_3 = true;
@@ -436,8 +459,9 @@ public class SpawnWaves : MonoBehaviour
 
                 else if (randomNumber == 3 && !isCurrentlyCasting)
                 {
-                    currentSpell = lv2_bossSpellsBeingCast[3];
-                    bossSpellRenderer.sprite = currentSpell;
+                    
+                    bossSpellText.text = lv2_enemySpellsList[3];
+                    bossSpellRenderer.sprite = null;
                     isCastingSpell_1 = false;
                     isCastingSpell_2 = false;
                     isCastingSpell_3 = false;
@@ -450,8 +474,9 @@ public class SpawnWaves : MonoBehaviour
 
                 else if (randomNumber == 4 && !isCurrentlyCasting)
                 {
-                    currentSpell = lv2_bossSpellsBeingCast[4];
-                    bossSpellRenderer.sprite = currentSpell;
+                    
+                    bossSpellText.text = lv2_enemySpellsList[4];
+                    bossSpellRenderer.sprite = null;
                     isCastingSpell_1 = false;
                     isCastingSpell_2 = false;
                     isCastingSpell_3 = false;
@@ -464,8 +489,9 @@ public class SpawnWaves : MonoBehaviour
 
                 else if (randomNumber == 5 && !isCurrentlyCasting)
                 {
-                    currentSpell = lv2_bossSpellsBeingCast[5];
-                    bossSpellRenderer.sprite = currentSpell;
+                    
+                    bossSpellText.text = lv2_enemySpellsList[5];
+                    bossSpellRenderer.sprite = null;
                     isCastingSpell_1 = false;
                     isCastingSpell_2 = false;
                     isCastingSpell_3 = false;
@@ -478,8 +504,9 @@ public class SpawnWaves : MonoBehaviour
 
                 else if (randomNumber == 6 && !isCurrentlyCasting)
                 {
-                    currentSpell = lv2_bossSpellsBeingCast[6];
-                    bossSpellRenderer.sprite = currentSpell;
+                    
+                    bossSpellText.text = lv2_enemySpellsList[6];
+                    bossSpellRenderer.sprite = null;
                     isCastingSpell_1 = false;
                     isCastingSpell_2 = false;
                     isCastingSpell_3 = false;
@@ -492,10 +519,12 @@ public class SpawnWaves : MonoBehaviour
                 break;
 
             case 3:
+                BossSpellPage.SetActive(true);
                 if (randomNumber == 0 && !isCurrentlyCasting)
                 {
-                    currentSpell = lv3_bossSpellsBeingCast[0];
-                    bossSpellRenderer.sprite = currentSpell;
+
+                    bossSpellText.text = lv3_enemySpellsList[0];
+                    bossSpellRenderer.sprite = null;
                     isCastingSpell_1 = true;
                     isCastingSpell_2 = false;
                     isCastingSpell_3 = false;
@@ -508,8 +537,8 @@ public class SpawnWaves : MonoBehaviour
 
                 else if (randomNumber == 1 && !isCurrentlyCasting)
                 {
-                    currentSpell = lv3_bossSpellsBeingCast[1];
-                    bossSpellRenderer.sprite = currentSpell;
+                    bossSpellText.text = lv3_enemySpellsList[1];
+                    bossSpellRenderer.sprite = null;
                     isCastingSpell_1 = false;
                     isCastingSpell_2 = true;
                     isCastingSpell_3 = false;
@@ -522,8 +551,8 @@ public class SpawnWaves : MonoBehaviour
 
                 else if (randomNumber == 2 && !isCurrentlyCasting)
                 {
-                    currentSpell = lv3_bossSpellsBeingCast[2];
-                    bossSpellRenderer.sprite = currentSpell;
+                    bossSpellText.text = lv3_enemySpellsList[2];
+                    bossSpellRenderer.sprite = null;
                     isCastingSpell_1 = false;
                     isCastingSpell_2 = false;
                     isCastingSpell_3 = true;
@@ -536,8 +565,8 @@ public class SpawnWaves : MonoBehaviour
 
                 else if (randomNumber == 3 && !isCurrentlyCasting)
                 {
-                    currentSpell = lv3_bossSpellsBeingCast[3];
-                    bossSpellRenderer.sprite = currentSpell;
+                    bossSpellText.text = lv3_enemySpellsList[3];
+                    bossSpellRenderer.sprite = null;
                     isCastingSpell_1 = false;
                     isCastingSpell_2 = false;
                     isCastingSpell_3 = false;
@@ -550,8 +579,8 @@ public class SpawnWaves : MonoBehaviour
 
                 else if (randomNumber == 4 && !isCurrentlyCasting)
                 {
-                    currentSpell = lv3_bossSpellsBeingCast[4];
-                    bossSpellRenderer.sprite = currentSpell;
+                    bossSpellText.text = lv3_enemySpellsList[4];
+                    bossSpellRenderer.sprite = null;
                     isCastingSpell_1 = false;
                     isCastingSpell_2 = false;
                     isCastingSpell_3 = false;
@@ -564,8 +593,8 @@ public class SpawnWaves : MonoBehaviour
 
                 else if (randomNumber == 5 && !isCurrentlyCasting)
                 {
-                    currentSpell = lv3_bossSpellsBeingCast[5];
-                    bossSpellRenderer.sprite = currentSpell;
+                    bossSpellText.text = lv3_enemySpellsList[5];
+                    bossSpellRenderer.sprite = null;
                     isCastingSpell_1 = false;
                     isCastingSpell_2 = false;
                     isCastingSpell_3 = false;
@@ -578,8 +607,8 @@ public class SpawnWaves : MonoBehaviour
 
                 else if (randomNumber == 6 && !isCurrentlyCasting)
                 {
-                    currentSpell = lv3_bossSpellsBeingCast[6];
-                    bossSpellRenderer.sprite = currentSpell;
+                    bossSpellText.text = lv3_enemySpellsList[6];
+                    bossSpellRenderer.sprite = null;
                     isCastingSpell_1 = false;
                     isCastingSpell_2 = false;
                     isCastingSpell_3 = false;

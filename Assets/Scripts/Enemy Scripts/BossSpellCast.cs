@@ -20,7 +20,7 @@ public class BossSpellCast : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        isLevelComplete = levelManager.GetLevelComplete();     
+            isLevelComplete = levelManager.GetLevelComplete();     
             hasSpawned = spawnwaves.GetBossSpawn();
             if (hasSpawned && !isLevelComplete)
             {

@@ -500,4 +500,19 @@ public class PopulatePages : MonoBehaviour
 
         }
     }
+
+    public string GetLeftPageText()
+    {
+        return leftPageText.text;
+    }
+
+    public string[] GetLevel2RightPageSpellArray()
+    {
+        return lv2_rightpage_spellArray;
+    }
+
+    public string[] GetLevel3RightPageSpellArray()
+    {
+        return lv3_rightpage_spellArray;
+    }
 }

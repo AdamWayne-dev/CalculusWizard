@@ -2,14 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using static UnityEngine.RuleTile.TilingRuleOutput;
+using TMPro;
+using UnityEngine.SceneManagement;
 
 public class FireSpells : MonoBehaviour
 {
+    PopulatePages populatePages;
+
     [SerializeField] AudioSource audioSource;
     [SerializeField] GameObject fireSpellPrefab;
     [SerializeField] CycleSpells cycleSpells;
     [SerializeField] float fireSpeed = 7f;
-
+                     TMP_Text pageText;
     [SerializeField] Sprite[] spellSprites;
 
     SpriteRenderer spellRenderer;
@@ -18,6 +22,10 @@ public class FireSpells : MonoBehaviour
     private int spellIndex;
     private bool spellExists = false;
 
+    private void Start()
+    {
+        populatePages = FindObjectOfType<PopulatePages>();
+    }
     void Update()
     {
         spellIndex = cycleSpells.GetSpellIndex();
@@ -33,9 +41,16 @@ public class FireSpells : MonoBehaviour
             audioSource.pitch = Random.Range(0.7f, 1f);
             audioSource.Play();
             spell = Instantiate(fireSpellPrefab, transform.position, Quaternion.identity);
-            spellRenderer = spell.GetComponent<SpriteRenderer>();
-            spellRenderer.sprite = spellSprites[spellIndex];
-            
+            if (SceneManager.GetActiveScene().buildIndex == 1)
+            {
+                spellRenderer = spell.GetComponent<SpriteRenderer>();
+                spellRenderer.sprite = spellSprites[spellIndex];
+            }
+            if (SceneManager.GetActiveScene().buildIndex == 2 || SceneManager.GetActiveScene().buildIndex == 3)
+            {
+                pageText = spell.GetComponentInChildren<TMP_Text>();
+                pageText.text = populatePages.GetLeftPageText();
+            }
             
         }
         if (spellExists)

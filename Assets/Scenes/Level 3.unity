@@ -1456,6 +1456,10 @@ PrefabInstance:
       propertyPath: healthSpriteRenderer
       value: 
       objectReference: {fileID: 2123702089}
+    - target: {fileID: 4571055170482607593, guid: 38544d99d4f79784da7f1a37d26a5373, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.06
+      objectReference: {fileID: 0}
     - target: {fileID: 8809786413457561251, guid: 38544d99d4f79784da7f1a37d26a5373, type: 3}
       propertyPath: m_Name
       value: Player
@@ -1632,6 +1636,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3649078311136231104, guid: ba26f0df5073dab4996f4a97f9595ac7, type: 3}
+      propertyPath: timer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3649078311136231104, guid: ba26f0df5073dab4996f4a97f9595ac7, type: 3}
       propertyPath: scoreText
       value: 
       objectReference: {fileID: 483946255}
@@ -1781,6 +1789,22 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2dcd17a09c2c4414eb2105e5d429c2b1, type: 3}
+--- !u!114 &4479344012584425240 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1073712263838671981, guid: 2dcd17a09c2c4414eb2105e5d429c2b1, type: 3}
+  m_PrefabInstance: {fileID: 4479344012584425239}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &4479344012584425241 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2476342079565426201, guid: 2dcd17a09c2c4414eb2105e5d429c2b1, type: 3}
+  m_PrefabInstance: {fileID: 4479344012584425239}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4799041888043830525
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1962,7 +1986,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 791625695901918997, guid: 8810d95615c725e47baee871bedb50ba, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 14.55
+      value: 13.61
       objectReference: {fileID: 0}
     - target: {fileID: 791625695901918997, guid: 8810d95615c725e47baee871bedb50ba, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2009,6 +2033,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 154219682}
     - target: {fileID: 6974851929114610332, guid: 8810d95615c725e47baee871bedb50ba, type: 3}
+      propertyPath: BossSpellPage
+      value: 
+      objectReference: {fileID: 4479344012584425241}
+    - target: {fileID: 6974851929114610332, guid: 8810d95615c725e47baee871bedb50ba, type: 3}
+      propertyPath: bossSpellText
+      value: 
+      objectReference: {fileID: 4479344012584425240}
+    - target: {fileID: 6974851929114610332, guid: 8810d95615c725e47baee871bedb50ba, type: 3}
       propertyPath: shieldFollowBoss
       value: 
       objectReference: {fileID: 499337239}
@@ -2016,74 +2048,6 @@ PrefabInstance:
       propertyPath: bossSpellRenderer
       value: 
       objectReference: {fileID: 666500262}
-    - target: {fileID: 6974851929114610332, guid: 8810d95615c725e47baee871bedb50ba, type: 3}
-      propertyPath: boss_Lvl_3_Prefab
-      value: 
-      objectReference: {fileID: 5163570132188328939, guid: 3457c12c99f827a47b47ebb63cd41edf, type: 3}
-    - target: {fileID: 6974851929114610332, guid: 8810d95615c725e47baee871bedb50ba, type: 3}
-      propertyPath: level_3_enemySprites.Array.size
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 6974851929114610332, guid: 8810d95615c725e47baee871bedb50ba, type: 3}
-      propertyPath: level_3_enemySprites.Array.data[0]
-      value: 
-      objectReference: {fileID: 21300000, guid: 7e051df6017950242b2cb744b441ac08, type: 3}
-    - target: {fileID: 6974851929114610332, guid: 8810d95615c725e47baee871bedb50ba, type: 3}
-      propertyPath: level_3_enemySprites.Array.data[1]
-      value: 
-      objectReference: {fileID: 21300000, guid: 5c2e99e45b096fd4a958a2defcb0ab35, type: 3}
-    - target: {fileID: 6974851929114610332, guid: 8810d95615c725e47baee871bedb50ba, type: 3}
-      propertyPath: level_3_enemySprites.Array.data[2]
-      value: 
-      objectReference: {fileID: 21300000, guid: cd57bd2bb435f2544a6f296fd536bb62, type: 3}
-    - target: {fileID: 6974851929114610332, guid: 8810d95615c725e47baee871bedb50ba, type: 3}
-      propertyPath: level_3_enemySprites.Array.data[3]
-      value: 
-      objectReference: {fileID: 21300000, guid: 0d61d1c369d2992439cc8a5b17247536, type: 3}
-    - target: {fileID: 6974851929114610332, guid: 8810d95615c725e47baee871bedb50ba, type: 3}
-      propertyPath: level_3_enemySprites.Array.data[4]
-      value: 
-      objectReference: {fileID: 21300000, guid: 03a18c31878418a43a7ec355de47ac4b, type: 3}
-    - target: {fileID: 6974851929114610332, guid: 8810d95615c725e47baee871bedb50ba, type: 3}
-      propertyPath: level_3_enemySprites.Array.data[5]
-      value: 
-      objectReference: {fileID: 21300000, guid: 4975e4729999c3c4f9a0bc520901aca3, type: 3}
-    - target: {fileID: 6974851929114610332, guid: 8810d95615c725e47baee871bedb50ba, type: 3}
-      propertyPath: level_3_enemySprites.Array.data[6]
-      value: 
-      objectReference: {fileID: 21300000, guid: 4f36184995e9a0f41ab37399e9aa8c77, type: 3}
-    - target: {fileID: 6974851929114610332, guid: 8810d95615c725e47baee871bedb50ba, type: 3}
-      propertyPath: lv3_bossSpellsBeingCast.Array.size
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 6974851929114610332, guid: 8810d95615c725e47baee871bedb50ba, type: 3}
-      propertyPath: lv3_bossSpellsBeingCast.Array.data[0]
-      value: 
-      objectReference: {fileID: 21300000, guid: 7e051df6017950242b2cb744b441ac08, type: 3}
-    - target: {fileID: 6974851929114610332, guid: 8810d95615c725e47baee871bedb50ba, type: 3}
-      propertyPath: lv3_bossSpellsBeingCast.Array.data[1]
-      value: 
-      objectReference: {fileID: 21300000, guid: 5c2e99e45b096fd4a958a2defcb0ab35, type: 3}
-    - target: {fileID: 6974851929114610332, guid: 8810d95615c725e47baee871bedb50ba, type: 3}
-      propertyPath: lv3_bossSpellsBeingCast.Array.data[2]
-      value: 
-      objectReference: {fileID: 21300000, guid: cd57bd2bb435f2544a6f296fd536bb62, type: 3}
-    - target: {fileID: 6974851929114610332, guid: 8810d95615c725e47baee871bedb50ba, type: 3}
-      propertyPath: lv3_bossSpellsBeingCast.Array.data[3]
-      value: 
-      objectReference: {fileID: 21300000, guid: 0d61d1c369d2992439cc8a5b17247536, type: 3}
-    - target: {fileID: 6974851929114610332, guid: 8810d95615c725e47baee871bedb50ba, type: 3}
-      propertyPath: lv3_bossSpellsBeingCast.Array.data[4]
-      value: 
-      objectReference: {fileID: 21300000, guid: 03a18c31878418a43a7ec355de47ac4b, type: 3}
-    - target: {fileID: 6974851929114610332, guid: 8810d95615c725e47baee871bedb50ba, type: 3}
-      propertyPath: lv3_bossSpellsBeingCast.Array.data[5]
-      value: 
-      objectReference: {fileID: 21300000, guid: 4975e4729999c3c4f9a0bc520901aca3, type: 3}
-    - target: {fileID: 6974851929114610332, guid: 8810d95615c725e47baee871bedb50ba, type: 3}
-      propertyPath: lv3_bossSpellsBeingCast.Array.data[6]
-      value: 
-      objectReference: {fileID: 21300000, guid: 4f36184995e9a0f41ab37399e9aa8c77, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
