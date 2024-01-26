@@ -1591,10 +1591,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Game Manager
       objectReference: {fileID: 0}
-    - target: {fileID: 866441818995084180, guid: ba26f0df5073dab4996f4a97f9595ac7, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1117682526999426126, guid: ba26f0df5073dab4996f4a97f9595ac7, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -1603,10 +1599,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 808831557}
-    - target: {fileID: 1936724362364542589, guid: ba26f0df5073dab4996f4a97f9595ac7, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ResumeGame
-      objectReference: {fileID: 0}
     - target: {fileID: 3407534431947155867, guid: ba26f0df5073dab4996f4a97f9595ac7, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1659,38 +1651,18 @@ PrefabInstance:
       propertyPath: timerText
       value: 
       objectReference: {fileID: 560970283}
-    - target: {fileID: 4030892315046692029, guid: ba26f0df5073dab4996f4a97f9595ac7, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5143141185068188809, guid: ba26f0df5073dab4996f4a97f9595ac7, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 808831557}
     - target: {fileID: 5413986625173886221, guid: ba26f0df5073dab4996f4a97f9595ac7, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 808831557}
-    - target: {fileID: 5601527288350443342, guid: ba26f0df5073dab4996f4a97f9595ac7, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5978008583194391178, guid: ba26f0df5073dab4996f4a97f9595ac7, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 808831557}
-    - target: {fileID: 6648850788580009166, guid: ba26f0df5073dab4996f4a97f9595ac7, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7397365049840800962, guid: ba26f0df5073dab4996f4a97f9595ac7, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 808831557}
-    - target: {fileID: 7397365049840800962, guid: ba26f0df5073dab4996f4a97f9595ac7, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: GoToMainMenu
-      objectReference: {fileID: 0}
     - target: {fileID: 7946423773644680968, guid: ba26f0df5073dab4996f4a97f9595ac7, type: 3}
       propertyPath: m_Camera
       value: 
@@ -1700,8 +1672,7 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 519420031}
     m_RemovedComponents: []
-    m_RemovedGameObjects:
-    - {fileID: 2172023233050341976, guid: ba26f0df5073dab4996f4a97f9595ac7, type: 3}
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ba26f0df5073dab4996f4a97f9595ac7, type: 3}
@@ -1779,6 +1750,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 321099630308225707, guid: 2dcd17a09c2c4414eb2105e5d429c2b1, type: 3}
+      propertyPath: m_Size.x
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 321099630308225707, guid: 2dcd17a09c2c4414eb2105e5d429c2b1, type: 3}
+      propertyPath: m_Size.y
+      value: 1.76
+      objectReference: {fileID: 0}
+    - target: {fileID: 321099630308225707, guid: 2dcd17a09c2c4414eb2105e5d429c2b1, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3808114429685107388, guid: 2dcd17a09c2c4414eb2105e5d429c2b1, type: 3}
       propertyPath: m_Name
       value: BossSpellCast

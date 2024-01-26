@@ -67,7 +67,7 @@ public class SpawnWaves : MonoBehaviour
 
     private void Start()
     {   
-        BossSpellPage.SetActive(false);
+        
         lv2_enemySpellsList = new string[7];
         lv3_enemySpellsList = new string[7];
         atFirstBossPosition = false;
@@ -353,6 +353,7 @@ public class SpawnWaves : MonoBehaviour
         switch (SceneManager.GetActiveScene().buildIndex)
         {
             case 1:
+                
                 if (randomNumber == 0 && !isCurrentlyCasting)
                 {
                     currentSpell = bossSpellsBeingCast[0];
@@ -411,7 +412,7 @@ public class SpawnWaves : MonoBehaviour
                 break;
 
             case 2:
-                BossSpellPage.SetActive(true);
+               
                 if (randomNumber == 0 && !isCurrentlyCasting)
                 {
                     
@@ -519,7 +520,7 @@ public class SpawnWaves : MonoBehaviour
                 break;
 
             case 3:
-                BossSpellPage.SetActive(true);
+                
                 if (randomNumber == 0 && !isCurrentlyCasting)
                 {
 

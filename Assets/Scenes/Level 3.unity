@@ -1637,7 +1637,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3649078311136231104, guid: ba26f0df5073dab4996f4a97f9595ac7, type: 3}
       propertyPath: timer
-      value: 5
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 3649078311136231104, guid: ba26f0df5073dab4996f4a97f9595ac7, type: 3}
       propertyPath: scoreText

@@ -276,8 +276,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 0.9
-  m_fontSizeBase: 0.9
+  m_fontSize: 0.7
+  m_fontSizeBase: 0.7
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -461,6 +461,10 @@ MonoBehaviour:
   rightPage: {fileID: 2118501042237317316}
   leftPageText: {fileID: 9069064560205318718}
   rightPageText: {fileID: 2185567752300706512}
+  lv2_leftpage_spellArray: []
+  lv2_rightpage_spellArray: []
+  lv3_leftpage_spellArray: []
+  lv3_rightpage_spellArray: []
   lv1_Spells:
   - {fileID: 21300000, guid: abc9312c4e4140e428cd628b7f80a31c, type: 3}
   - {fileID: 21300000, guid: 3b00018b7aaedfc4faa2d22c9914f6d1, type: 3}
@@ -872,8 +876,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 0.9
-  m_fontSizeBase: 0.9
+  m_fontSize: 0.7
+  m_fontSizeBase: 0.7
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18

@@ -1767,7 +1767,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3649078311136231104, guid: ba26f0df5073dab4996f4a97f9595ac7, type: 3}
       propertyPath: timer
-      value: 5
+      value: 75
       objectReference: {fileID: 0}
     - target: {fileID: 3649078311136231104, guid: ba26f0df5073dab4996f4a97f9595ac7, type: 3}
       propertyPath: scoreText
@@ -1886,7 +1886,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3832525140850184786, guid: 2dcd17a09c2c4414eb2105e5d429c2b1, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 17.03
+      value: 16.96
       objectReference: {fileID: 0}
     - target: {fileID: 3832525140850184786, guid: 2dcd17a09c2c4414eb2105e5d429c2b1, type: 3}
       propertyPath: m_LocalPosition.y
