@@ -1595,6 +1595,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Game Manager
       objectReference: {fileID: 0}
+    - target: {fileID: 1936724362364542589, guid: ba26f0df5073dab4996f4a97f9595ac7, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 808831557}
+    - target: {fileID: 1936724362364542589, guid: ba26f0df5073dab4996f4a97f9595ac7, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ResumeGame
+      objectReference: {fileID: 0}
     - target: {fileID: 3407534431947155867, guid: ba26f0df5073dab4996f4a97f9595ac7, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1659,6 +1667,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7397365049840800962, guid: ba26f0df5073dab4996f4a97f9595ac7, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 808831557}
+    - target: {fileID: 7397365049840800962, guid: ba26f0df5073dab4996f4a97f9595ac7, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: GoToMainMenu
+      objectReference: {fileID: 0}
     - target: {fileID: 9142882919227952561, guid: ba26f0df5073dab4996f4a97f9595ac7, type: 3}
       propertyPath: m_Camera
       value: 
@@ -1683,13 +1699,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2185567752300706512, guid: 75da198bc6525354ebe726652999ff29, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 2600717009900420676, guid: 75da198bc6525354ebe726652999ff29, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0.19056
       objectReference: {fileID: 0}
     - target: {fileID: 2600717009900420676, guid: 75da198bc6525354ebe726652999ff29, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -5.58
+      value: -5.59
       objectReference: {fileID: 0}
     - target: {fileID: 2600717009900420676, guid: 75da198bc6525354ebe726652999ff29, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1723,9 +1743,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3722465710606087163, guid: 75da198bc6525354ebe726652999ff29, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 2.73
+      objectReference: {fileID: 0}
     - target: {fileID: 4366777915151010100, guid: 75da198bc6525354ebe726652999ff29, type: 3}
       propertyPath: m_Name
       value: Tome_Open
+      objectReference: {fileID: 0}
+    - target: {fileID: 9069064560205318718, guid: 75da198bc6525354ebe726652999ff29, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

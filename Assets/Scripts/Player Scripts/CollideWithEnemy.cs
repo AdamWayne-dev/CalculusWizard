@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class CollideWithEnemy : MonoBehaviour
 {
@@ -14,6 +15,7 @@ public class CollideWithEnemy : MonoBehaviour
     FireSpells fireSpells;
     SpriteRenderer spriteRenderer;
     SpawnWaves spawnWaves;
+    TMP_Text tmp_text;
     [SerializeField] GameObject spellBoof;
 
     private bool[] spellsCollected;
@@ -230,6 +232,8 @@ public class CollideWithEnemy : MonoBehaviour
                             {
                                 populate.SetSpellsCollected(0, true);
                             }
+                            tmp_text = GetComponentInChildren<TMP_Text>();
+                            tmp_text.text = "";
                             fireSpells.SetSpellExists(false);
                             spawnWaves.SetHasSpawned(false);
                             levelManager.SetScore(30);
@@ -240,12 +244,15 @@ public class CollideWithEnemy : MonoBehaviour
 
                         else if (collision.tag == "Boss_Level_2")
                         {
+                            tmp_text = GetComponentInChildren<TMP_Text>();
+                            tmp_text.text = "";
                             Boss_Level_2_Check_Spell_0();
                         }
 
                         else
                         {
-
+                            tmp_text = GetComponentInChildren<TMP_Text>();
+                            tmp_text.text = "";
                             levelManager.SetScore(-10);
                             fireSpells.SetSpellExists(false);
                             spriteRenderer.enabled = false;
@@ -259,6 +266,8 @@ public class CollideWithEnemy : MonoBehaviour
                             {
                                 populate.SetSpellsCollected(1, true);
                             }
+                            tmp_text = GetComponentInChildren<TMP_Text>();
+                            tmp_text.text = "";
                             fireSpells.SetSpellExists(false);
                             spawnWaves.SetHasSpawned(false);
                             levelManager.SetScore(30);
@@ -269,12 +278,15 @@ public class CollideWithEnemy : MonoBehaviour
 
                         else if (collision.tag == "Boss_Level_2")
                         {
+                            tmp_text = GetComponentInChildren<TMP_Text>();
+                            tmp_text.text = "";
                             Boss_Level_2_Check_Spell_1();
                         }
 
                         else
                         {
-
+                            tmp_text = GetComponentInChildren<TMP_Text>();
+                            tmp_text.text = "";
                             levelManager.SetScore(-10);
                             fireSpells.SetSpellExists(false);
                             spriteRenderer.enabled = false;
@@ -288,6 +300,8 @@ public class CollideWithEnemy : MonoBehaviour
                             {
                                 populate.SetSpellsCollected(2, true);
                             }
+                            tmp_text = GetComponentInChildren<TMP_Text>();
+                            tmp_text.text = "";
                             fireSpells.SetSpellExists(false);
                             spawnWaves.SetHasSpawned(false);
                             levelManager.SetScore(30);
@@ -298,12 +312,15 @@ public class CollideWithEnemy : MonoBehaviour
 
                         else if (collision.tag == "Boss_Level_2")
                         {
+                            tmp_text = GetComponentInChildren<TMP_Text>();
+                            tmp_text.text = "";
                             Boss_Level_2_Check_Spell_2();
                         }
 
                         else
                         {
-
+                            tmp_text = GetComponentInChildren<TMP_Text>();
+                            tmp_text.text = "";
                             levelManager.SetScore(-10);
                             fireSpells.SetSpellExists(false);
                             spriteRenderer.enabled = false;
@@ -317,6 +334,8 @@ public class CollideWithEnemy : MonoBehaviour
                             {
                                 populate.SetSpellsCollected(3, true);
                             }
+                            tmp_text = GetComponentInChildren<TMP_Text>();
+                            tmp_text.text = "";
                             fireSpells.SetSpellExists(false);
                             spawnWaves.SetHasSpawned(false);
                             levelManager.SetScore(30);
@@ -327,12 +346,15 @@ public class CollideWithEnemy : MonoBehaviour
 
                         else if (collision.tag == "Boss_Level_2")
                         {
+                            tmp_text = GetComponentInChildren<TMP_Text>();
+                            tmp_text.text = "";
                             Boss_Level_2_Check_Spell_3();
                         }
 
                         else
                         {
-
+                            tmp_text = GetComponentInChildren<TMP_Text>();
+                            tmp_text.text = "";
                             levelManager.SetScore(-10);
                             fireSpells.SetSpellExists(false);
                             spriteRenderer.enabled = false;
@@ -346,6 +368,8 @@ public class CollideWithEnemy : MonoBehaviour
                             {
                                 populate.SetSpellsCollected(4, true);
                             }
+                            tmp_text = GetComponentInChildren<TMP_Text>();
+                            tmp_text.text = "";
                             fireSpells.SetSpellExists(false);
                             spawnWaves.SetHasSpawned(false);
                             levelManager.SetScore(30);
@@ -356,12 +380,15 @@ public class CollideWithEnemy : MonoBehaviour
 
                         else if (collision.tag == "Boss_Level_2")
                         {
+                            tmp_text = GetComponentInChildren<TMP_Text>();
+                            tmp_text.text = "";
                             Boss_Level_2_Check_Spell_4();
                         }
 
                         else
                         {
-
+                            tmp_text = GetComponentInChildren<TMP_Text>();
+                            tmp_text.text = "";
                             levelManager.SetScore(-10);
                             fireSpells.SetSpellExists(false);
                             spriteRenderer.enabled = false;
@@ -376,6 +403,8 @@ public class CollideWithEnemy : MonoBehaviour
                             {
                                 populate.SetSpellsCollected(5, true);
                             }
+                            tmp_text = GetComponentInChildren<TMP_Text>();
+                            tmp_text.text = "";
                             fireSpells.SetSpellExists(false);
                             spawnWaves.SetHasSpawned(false);
                             levelManager.SetScore(30);
@@ -386,12 +415,15 @@ public class CollideWithEnemy : MonoBehaviour
 
                         else if (collision.tag == "Boss_Level_2")
                         {
+                            tmp_text = GetComponentInChildren<TMP_Text>();
+                            tmp_text.text = "";
                             Boss_Level_2_Check_Spell_5();
                         }
 
                         else
                         {
-
+                            tmp_text = GetComponentInChildren<TMP_Text>();
+                            tmp_text.text = "";
                             levelManager.SetScore(-10);
                             fireSpells.SetSpellExists(false);
                             spriteRenderer.enabled = false;
@@ -406,6 +438,8 @@ public class CollideWithEnemy : MonoBehaviour
                             {
                                 populate.SetSpellsCollected(6, true);
                             }
+                            tmp_text = GetComponentInChildren<TMP_Text>();
+                            tmp_text.text = "";
                             fireSpells.SetSpellExists(false);
                             spawnWaves.SetHasSpawned(false);
                             levelManager.SetScore(30);
@@ -416,12 +450,15 @@ public class CollideWithEnemy : MonoBehaviour
 
                         else if (collision.tag == "Boss_Level_2")
                         {
+                            tmp_text = GetComponentInChildren<TMP_Text>();
+                            tmp_text.text = "";
                             Boss_Level_2_Check_Spell_6();
                         }
 
                         else
                         {
-
+                            tmp_text = GetComponentInChildren<TMP_Text>();
+                            tmp_text.text = "";
                             levelManager.SetScore(-10);
                             fireSpells.SetSpellExists(false);
                             spriteRenderer.enabled = false;
@@ -440,6 +477,8 @@ public class CollideWithEnemy : MonoBehaviour
                             {
                                 populate.SetSpellsCollected(0, true);
                             }
+                            tmp_text = GetComponentInChildren<TMP_Text>();
+                            tmp_text.text = "";
                             fireSpells.SetSpellExists(false);
                             spawnWaves.SetHasSpawned(false);
                             levelManager.SetScore(45);
@@ -450,12 +489,15 @@ public class CollideWithEnemy : MonoBehaviour
 
                         else if (collision.tag == "Boss_Level_3")
                         {
+                            tmp_text = GetComponentInChildren<TMP_Text>();
+                            tmp_text.text = "";
                             Boss_Level_2_Check_Spell_0();
                         }
 
                         else
                         {
-
+                            tmp_text = GetComponentInChildren<TMP_Text>();
+                            tmp_text.text = "";
                             levelManager.SetScore(-20);
                             fireSpells.SetSpellExists(false);
                             spriteRenderer.enabled = false;
@@ -469,6 +511,8 @@ public class CollideWithEnemy : MonoBehaviour
                             {
                                 populate.SetSpellsCollected(1, true);
                             }
+                            tmp_text = GetComponentInChildren<TMP_Text>();
+                            tmp_text.text = "";
                             fireSpells.SetSpellExists(false);
                             spawnWaves.SetHasSpawned(false);
                             levelManager.SetScore(45);
@@ -479,12 +523,15 @@ public class CollideWithEnemy : MonoBehaviour
 
                         else if (collision.tag == "Boss_Level_3")
                         {
+                            tmp_text = GetComponentInChildren<TMP_Text>();
+                            tmp_text.text = "";
                             Boss_Level_2_Check_Spell_1();
                         }
 
                         else
                         {
-
+                            tmp_text = GetComponentInChildren<TMP_Text>();
+                            tmp_text.text = "";
                             levelManager.SetScore(-20);
                             fireSpells.SetSpellExists(false);
                             spriteRenderer.enabled = false;
@@ -498,6 +545,8 @@ public class CollideWithEnemy : MonoBehaviour
                             {
                                 populate.SetSpellsCollected(2, true);
                             }
+                            tmp_text = GetComponentInChildren<TMP_Text>();
+                            tmp_text.text = "";
                             fireSpells.SetSpellExists(false);
                             spawnWaves.SetHasSpawned(false);
                             levelManager.SetScore(45);
@@ -508,12 +557,15 @@ public class CollideWithEnemy : MonoBehaviour
 
                         else if (collision.tag == "Boss_Level_3")
                         {
+                            tmp_text = GetComponentInChildren<TMP_Text>();
+                            tmp_text.text = "";
                             Boss_Level_2_Check_Spell_2();
                         }
 
                         else
                         {
-
+                            tmp_text = GetComponentInChildren<TMP_Text>();
+                            tmp_text.text = "";
                             levelManager.SetScore(-20);
                             fireSpells.SetSpellExists(false);
                             spriteRenderer.enabled = false;
@@ -527,6 +579,8 @@ public class CollideWithEnemy : MonoBehaviour
                             {
                                 populate.SetSpellsCollected(3, true);
                             }
+                            tmp_text = GetComponentInChildren<TMP_Text>();
+                            tmp_text.text = "";
                             fireSpells.SetSpellExists(false);
                             spawnWaves.SetHasSpawned(false);
                             levelManager.SetScore(45);
@@ -537,12 +591,15 @@ public class CollideWithEnemy : MonoBehaviour
 
                         else if (collision.tag == "Boss_Level_3")
                         {
+                            tmp_text = GetComponentInChildren<TMP_Text>();
+                            tmp_text.text = "";
                             Boss_Level_2_Check_Spell_3();
                         }
 
                         else
                         {
-
+                            tmp_text = GetComponentInChildren<TMP_Text>();
+                            tmp_text.text = "";
                             levelManager.SetScore(-20);
                             fireSpells.SetSpellExists(false);
                             spriteRenderer.enabled = false;
@@ -556,6 +613,8 @@ public class CollideWithEnemy : MonoBehaviour
                             {
                                 populate.SetSpellsCollected(4, true);
                             }
+                            tmp_text = GetComponentInChildren<TMP_Text>();
+                            tmp_text.text = "";
                             fireSpells.SetSpellExists(false);
                             spawnWaves.SetHasSpawned(false);
                             levelManager.SetScore(45);
@@ -566,12 +625,15 @@ public class CollideWithEnemy : MonoBehaviour
 
                         else if (collision.tag == "Boss_Level_3")
                         {
-                            Boss_Level_2_Check_Spell_4();
+                            tmp_text = GetComponentInChildren<TMP_Text>();
+                            tmp_text.text = "";
+                            Boss_Level_2_Check_Spell_4();                          
                         }
 
                         else
                         {
-
+                            tmp_text = GetComponentInChildren<TMP_Text>();
+                            tmp_text.text = "";
                             levelManager.SetScore(-20);
                             fireSpells.SetSpellExists(false);
                             spriteRenderer.enabled = false;
@@ -586,6 +648,8 @@ public class CollideWithEnemy : MonoBehaviour
                             {
                                 populate.SetSpellsCollected(5, true);
                             }
+                            tmp_text = GetComponentInChildren<TMP_Text>();
+                            tmp_text.text = "";
                             fireSpells.SetSpellExists(false);
                             spawnWaves.SetHasSpawned(false);
                             levelManager.SetScore(45);
@@ -596,12 +660,15 @@ public class CollideWithEnemy : MonoBehaviour
 
                         else if (collision.tag == "Boss_Level_3")
                         {
+                            tmp_text = GetComponentInChildren<TMP_Text>();
+                            tmp_text.text = "";
                             Boss_Level_2_Check_Spell_5();
                         }
 
                         else
                         {
-
+                            tmp_text = GetComponentInChildren<TMP_Text>();
+                            tmp_text.text = "";
                             levelManager.SetScore(-20);
                             fireSpells.SetSpellExists(false);
                             spriteRenderer.enabled = false;
@@ -616,6 +683,8 @@ public class CollideWithEnemy : MonoBehaviour
                             {
                                 populate.SetSpellsCollected(6, true);
                             }
+                            tmp_text = GetComponentInChildren<TMP_Text>();
+                            tmp_text.text = "";
                             fireSpells.SetSpellExists(false);
                             spawnWaves.SetHasSpawned(false);
                             levelManager.SetScore(45);
@@ -626,12 +695,15 @@ public class CollideWithEnemy : MonoBehaviour
 
                         else if (collision.tag == "Boss_Level_3")
                         {
+                            tmp_text = GetComponentInChildren<TMP_Text>();
+                            tmp_text.text = "";
                             Boss_Level_2_Check_Spell_6();
                         }
 
                         else
                         {
-
+                            tmp_text = GetComponentInChildren<TMP_Text>();
+                            tmp_text.text = "";
                             levelManager.SetScore(-20);
                             fireSpells.SetSpellExists(false);
                             spriteRenderer.enabled = false;

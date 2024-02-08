@@ -8,6 +8,7 @@ using UnityEngine.SceneManagement;
 public class FireSpells : MonoBehaviour
 {
     PopulatePages populatePages;
+    LevelLoader levelLoader;
 
     [SerializeField] AudioSource audioSource;
     [SerializeField] GameObject fireSpellPrefab;
@@ -20,22 +21,25 @@ public class FireSpells : MonoBehaviour
     GameObject spell;
 
     private int spellIndex;
+    private bool isPaused;
     private bool spellExists = false;
 
     private void Start()
     {
         populatePages = FindObjectOfType<PopulatePages>();
+        levelLoader = FindObjectOfType<LevelLoader>();
     }
     void Update()
     {
         spellIndex = cycleSpells.GetSpellIndex();
         SetCurrentSpell();
         FireSpell();
+        isPaused = levelLoader.GetPausedStatus();
     }
 
     private void FireSpell() // Basic system for firing a spell. Creates a delay by only allowing for one spell per time, disabling the spamming of spells.
     {
-        if ((Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Mouse0)) && !spellExists)
+        if ((Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Mouse0)) && !spellExists && !isPaused)
         {
             spellExists = true;
             audioSource.pitch = Random.Range(0.7f, 1f);
